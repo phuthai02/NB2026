@@ -325,6 +325,13 @@
   .shop .meta { display: flex; align-items: flex-start; gap: 6px; font-size: 13px; color: var(--muted); }
   .shop .meta .icon { margin-top: 3px; }
   .shop .maplink { margin: 6px 0 0; align-self: flex-start; }
+  .cost-table tr.grp td {
+    padding-top: 14px; padding-bottom: 8px;
+    font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--warm); background: var(--surface);
+  }
+  .cost-table tr.sub td { font-weight: 700; background: var(--surface-2); }
+  .cost-table td.r { width: 1%; }
   .cost-tiles { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 28px; }
   @media (min-width: 900px) { .cost-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   .tile { padding: 16px 18px; }
@@ -1305,64 +1312,115 @@
     <div class="sec-head">
       <div class="eyebrow">Chi phí</div>
       <h2>Mỗi người khoảng 1,95 triệu</h2>
-      <p>Tính cho 4 người lớn. Gồm vé tham quan, ăn uống, xăng và phí cao tốc, chưa gồm tiền phòng. Bé dưới 2 tuổi được miễn vé ở cả 3 điểm.</p>
+      <p>Một bảng cho cả chuyến: cột giữa là 1 người lớn, cột cuối là cả nhà 4 người lớn. Bé dưới 2 tuổi được miễn vé ở cả 3 điểm. Chưa gồm tiền phòng.</p>
     </div>
 
     <div class="cost-tiles">
       <div class="card tile">
         <div class="label">Vé tham quan</div>
         <div class="val num">600.000đ</div>
-        <div class="hint">Tuyệt Tịnh Cốc, Tam Cốc, Green Pine</div>
+        <div class="hint">Cả nhà 2,4 triệu</div>
       </div>
       <div class="card tile">
         <div class="label">Ăn uống</div>
         <div class="val num">~1.150.000đ</div>
-        <div class="hint">0,85–1,45 triệu, chi tiết từng bữa bên dưới</div>
+        <div class="hint">Cả nhà ~4,6 triệu</div>
       </div>
       <div class="card tile">
-        <div class="label">Xe, chia 4 người</div>
+        <div class="label">Đi lại</div>
         <div class="val num">~200.000đ</div>
-        <div class="hint">Cao tốc ~300.000đ + xăng ~500.000đ</div>
+        <div class="hint">Cả nhà ~800.000đ</div>
       </div>
       <div class="card tile total">
         <div class="label">Tổng mỗi người</div>
         <div class="val num">~1.950.000đ</div>
-        <div class="hint">Cả nhà 4 người khoảng 7,8 triệu</div>
+        <div class="hint">Cả nhà khoảng 7,8 triệu</div>
       </div>
     </div>
 
-    <h3 class="sub-h">Giá vé theo bảng giá tỉnh Ninh Bình năm 2026</h3>
     <div class="card table-wrap">
-      <table>
+      <table class="cost-table">
         <thead>
-          <tr><th>Hạng mục</th><th class="hide-sm">Cách tính</th><th class="r">Thành tiền</th></tr>
+          <tr><th>Hạng mục</th><th class="r">1 người</th><th class="r">Cả nhà (×4)</th></tr>
         </thead>
         <tbody>
+          <tr class="grp"><td colspan="3">Vé tham quan</td></tr>
           <tr>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Tuy%E1%BB%87t+T%E1%BB%8Bnh+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Tuyệt Tịnh Cốc</a><small class="num">100.000đ/người lớn · bé dưới 90 cm không mất vé</small></td>
-            <td class="hide-sm num">100.000 × 4</td>
-            <td class="r num">400.000đ</td>
-          </tr>
-          <tr>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=B%E1%BA%BFn+thuy%E1%BB%81n+Tam+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Tam Cốc</a>, đã gồm đò<small class="num">250.000đ/người lớn · mỗi đò tối đa 4 khách · trẻ dưới 1m miễn phí</small></td>
-            <td class="hide-sm num">250.000 × 4</td>
-            <td class="r num">1.000.000đ</td>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Tuy%E1%BB%87t+T%E1%BB%8Bnh+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Tuyệt Tịnh Cốc</a><small>Ngày 1 · bé dưới 90 cm miễn phí</small></td>
+            <td class="r num">100k</td>
+            <td class="r num">400k</td>
           </tr>
           <tr>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Green+Pine+Camp+h%E1%BB%93+%C4%90%E1%BB%93ng+Ch%C6%B0%C6%A1ng" target="_blank" rel="noopener">Green Pine Camp</a> (hồ Đồng Chương)<small class="num">250.000đ/người lớn, gồm xe điện hoặc xe đạp 4 giờ · trẻ dưới 1m miễn phí</small></td>
-            <td class="hide-sm num">250.000 × 4</td>
-            <td class="r num">1.000.000đ</td>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=B%E1%BA%BFn+thuy%E1%BB%81n+Tam+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Tam Cốc</a>, đã gồm đò<small>Ngày 2 · mỗi đò tối đa 4 khách · bé dưới 1m miễn phí</small></td>
+            <td class="r num">250k</td>
+            <td class="r num">1tr</td>
           </tr>
-          <tr class="free">
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Ph%E1%BB%91+c%E1%BB%95+Hoa+L%C6%B0+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Phố cổ Hoa Lư</a>, <a href="https://www.google.com/maps/dir/?api=1&destination=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Ô Trấn – Starbucks Tràng An</a>*<small>Không bán vé vào cửa</small></td>
-            <td class="hide-sm">—</td>
-            <td class="r num">0đ</td>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Green+Pine+Camp+h%E1%BB%93+%C4%90%E1%BB%93ng+Ch%C6%B0%C6%A1ng" target="_blank" rel="noopener">Green Pine Camp</a>, gồm xe điện<small>Ngày 3 · dùng tối đa 4 giờ · bé dưới 1m miễn phí</small></td>
+            <td class="r num">250k</td>
+            <td class="r num">1tr</td>
           </tr>
-          <tr class="total">
-            <td>Tổng tiền vé cả nhà</td>
-            <td class="hide-sm"></td>
-            <td class="r num">2.400.000đ</td>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Ph%E1%BB%91+c%E1%BB%95+Hoa+L%C6%B0+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Phố cổ Hoa Lư</a>, <a href="https://www.google.com/maps/dir/?api=1&destination=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Ô Trấn – Starbucks</a>*<small>Không bán vé vào cửa</small></td>
+            <td class="r num">0</td>
+            <td class="r num">0</td>
           </tr>
+          <tr class="sub"><td>Cộng vé</td><td class="r num">600k</td><td class="r num">2,4tr</td></tr>
+          <tr class="grp"><td colspan="3">Ăn uống</td></tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=C%C6%A1m+Ni%C3%AAu+Tam+C%E1%BB%91c+CLAYPOT+RICE+RESTAURANT" target="_blank" rel="noopener">Cơm Niêu Tam Cốc</a><small>Ngày 1 · 11:00 trưa</small></td>
+            <td class="r num">100–200k</td>
+            <td class="r num">400–800k</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Tam+Coc+Mountain+view+Restaurant+BBQ+Hot+Pot" target="_blank" rel="noopener">Tam Coc Mountain View</a><small>Ngày 1 · 19:00 tối</small></td>
+            <td class="r num">100–200k</td>
+            <td class="r num">400–800k</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Rêu Coffee &amp; Stay</a><small>Ngày 2 · 08:30 sáng</small></td>
+            <td class="r num">40–60k</td>
+            <td class="r num">160–240k</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+H%C3%A0ng+%C4%90%E1%BB%A9c+D%E1%BA%ABn+Tam+C%E1%BB%91c" target="_blank" rel="noopener">Nhà hàng Đức Dẫn</a><small>Ngày 2 · 12:00 trưa</small></td>
+            <td class="r num">200–300k</td>
+            <td class="r num">0,8–1,2tr</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Starbucks Tràng An</a><small>Ngày 2 · 15:45 · 1 ly đồ uống</small></td>
+            <td class="r num">75–125k</td>
+            <td class="r num">300–500k</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+h%C3%A0ng+M%E1%BB%99c+Lan+n%C3%BAi+K%E1%BB%B3+L%C3%A2n+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Nhà hàng Mộc Lan</a><small>Ngày 2 · 19:00 tối</small></td>
+            <td class="r num">100–200k</td>
+            <td class="r num">400–800k</td>
+          </tr>
+          <tr>
+            <td>Ăn sáng ở chỗ ở<small>Ngày 3 · 08:30 sáng</small></td>
+            <td class="r num">40–60k</td>
+            <td class="r num">160–240k</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener">Nhà hàng Năm Dê (CS15)</a><small>Ngày 3 · 12:45 trưa</small></td>
+            <td class="r num">200–300k</td>
+            <td class="r num">0,8–1,2tr</td>
+          </tr>
+          <tr class="sub"><td>Cộng ăn uống</td><td class="r num">~1,15tr</td><td class="r num">~4,6tr</td></tr>
+          <tr class="grp"><td colspan="3">Đi lại (ô tô riêng)</td></tr>
+          <tr>
+            <td>Phí cao tốc<small>Cả đi lẫn về, ~150k mỗi chiều</small></td>
+            <td class="r num">~75k</td>
+            <td class="r num">~300k</td>
+          </tr>
+          <tr>
+            <td>Xăng<small>Khoảng 300 km cả chuyến</small></td>
+            <td class="r num">~125k</td>
+            <td class="r num">~500k</td>
+          </tr>
+          <tr class="sub"><td>Cộng đi lại</td><td class="r num">~200k</td><td class="r num">~800k</td></tr>
+          <tr class="total"><td>Tổng cả chuyến<small>Chưa gồm tiền phòng</small></td><td class="r num">~1,95tr</td><td class="r num">~7,8tr</td></tr>
         </tbody>
       </table>
     </div>
@@ -1370,84 +1428,9 @@
     <div class="extras">
       <div class="card extra"><b>Tam Cốc đã đổi cách bán vé</b>Không còn bán vé đò riêng 150.000đ/đò. Vé 250.000đ/người đã gồm đi đò.</div>
       <div class="card extra"><b>Vé cho bé</b>Bé dưới 1m miễn vé ở Tam Cốc và Green Pine, dưới 90 cm miễn vé ở Tuyệt Tịnh Cốc. Quầy vé có thể đo chiều cao.</div>
-      <div class="card extra"><b>Tùy chọn ở phố cổ</b>Thuyền thả đèn hoa đăng trên hồ Kỳ Lân: 100.000đ/người lớn, thuyền VIP 150.000đ. Không tính trong tổng.</div>
+      <div class="card extra"><b>Chưa tính trong tổng</b>Gửi ô tô ở các điểm, tiền bồi dưỡng lái đò, thuyền thả đèn hoa đăng ở phố cổ (100.000đ/người lớn).</div>
     </div>
-    <p class="fineprint">* Ô Trấn không có trong bảng giá vé của tỉnh. Xăng ước tính cho khoảng 300 km cả chuyến.</p>
-
-    <h3 class="sub-h sub-h-gap">Tiền ăn uống từng bữa</h3>
-    <p class="sub-p">Mỗi bữa ăn ở quán gần điểm đang chơi lúc đó, toàn quán từ 4,7 sao trên Google Maps. Cột cuối là giá cho 1 người lớn.</p>
-    <div class="card table-wrap">
-      <table>
-        <thead>
-          <tr><th>Giờ</th><th>Quán</th><th class="hide-sm">Google</th><th class="r hide-sm">Mở cửa</th><th class="r">~/người</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="when num">11:00</span><span class="day-tag">Ngày 1</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=C%C6%A1m+Ni%C3%AAu+Tam+C%E1%BB%91c+CLAYPOT+RICE+RESTAURANT" target="_blank" rel="noopener">Cơm Niêu Tam Cốc – Claypot Rice</a><small>Trưa · cơm niêu, món quê · cách Rêu ~2,5 km</small></td>
-            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,9 (1.438)</span></td>
-            <td class="r num hide-sm">từ 10:00</td>
-            <td class="r num">100–200k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">19:00</span><span class="day-tag">Ngày 1</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Tam+Coc+Mountain+view+Restaurant+BBQ+Hot+Pot" target="_blank" rel="noopener">Tam Coc Mountain View Restaurant</a><small>Tối · nướng, lẩu, món Việt · gần bến Tam Cốc</small></td>
-            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (412)</span></td>
-            <td class="r num hide-sm">đến 22:00</td>
-            <td class="r num">100–200k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">08:30</span><span class="day-tag">Ngày 2</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Rêu Coffee &amp; Stay</a><small>Ăn sáng nhẹ · hỏi chủ nhà trước</small></td>
-            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 5,0 (341)</span></td>
-            <td class="r hide-sm">—</td>
-            <td class="r num">40–60k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">12:00</span><span class="day-tag">Ngày 2</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+H%C3%A0ng+%C4%90%E1%BB%A9c+D%E1%BA%ABn+Tam+C%E1%BB%91c" target="_blank" rel="noopener">Nhà hàng Đức Dẫn</a><small>Trưa · món Việt · sau khi trả phòng Rêu</small></td>
-            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,8 (591)</span></td>
-            <td class="r num hide-sm">đến 23:00</td>
-            <td class="r num">200–300k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">15:45</span><span class="day-tag">Ngày 2</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Starbucks Tràng An</a><small>Cà phê · Ô Trấn, khu bến thuyền Tràng An</small></td>
-            <td class="hide-sm">—</td>
-            <td class="r num hide-sm">7:00 – 18:00</td>
-            <td class="r num">75–125k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">19:00</span><span class="day-tag">Ngày 2</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+h%C3%A0ng+M%E1%BB%99c+Lan+n%C3%BAi+K%E1%BB%B3+L%C3%A2n+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Nhà hàng Mộc Lan</a><small>Tối · ngay trong phố cổ Hoa Lư · nên đặt bàn</small></td>
-            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (1.151)</span></td>
-            <td class="r num hide-sm">đến 22:00</td>
-            <td class="r num">100–200k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">08:30</span><span class="day-tag">Ngày 3</span></td>
-            <td>Chỗ ở đêm thứ Bảy<small>Ăn sáng</small></td>
-            <td class="hide-sm">—</td>
-            <td class="r hide-sm">—</td>
-            <td class="r num">40–60k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">12:45</span><span class="day-tag">Ngày 3</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener">Nhà hàng Năm Dê (CS15)</a><small>Trưa · dê núi, cơm cháy · trên đường ra cao tốc</small></td>
-            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (1.429)</span></td>
-            <td class="r num hide-sm">đến 21:00</td>
-            <td class="r num">200–300k</td>
-          </tr>
-          <tr class="total">
-            <td colspan="2">Ăn uống cả chuyến, 1 người</td>
-            <td class="hide-sm"></td>
-            <td class="hide-sm"></td>
-            <td class="r num">~1,15 tr</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="fineprint">Tiền ăn mỗi người khoảng 0,85–1,45 triệu. Ngày 1 ăn sáng ở nhà trước khi đi. Giá mỗi quán lấy theo mức khách báo cáo trên Google (Đức Dẫn, Năm Dê 200.000–300.000đ; Cơm Niêu, Mountain View, Mộc Lan 100.000–200.000đ). Starbucks tính 1 ly đồ uống. Nên đặt bàn trước và hỏi giá trước khi gọi món dê.</p>
+    <p class="fineprint">k = nghìn đồng, tr = triệu đồng. Giá vé theo bảng giá các khu, điểm du lịch tỉnh Ninh Bình năm 2026 và trang chính thức hồ Đồng Chương. Giá ăn theo mức khách báo cáo trên Google: quán ghi 100–200k nghĩa là mỗi người thường tiêu trong khoảng đó, cả nhà nhân 4. Tổng ăn uống lấy giữa khoảng (0,85–1,45 triệu/người). Ngày 1 ăn sáng ở nhà. * Ô Trấn không có trong bảng giá vé của tỉnh.</p>
   </section>
 
   <!-- ================= ĐỒ CHO BÉ ================= -->
