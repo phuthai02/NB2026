@@ -314,6 +314,11 @@
   .note .ov-icon { width: 36px; height: 36px; font-size: 18px; }
   .note h3 { font-size: 15px; font-weight: 600; }
   .note p { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+  .note p + p { margin-top: 6px; }
+  .note b { color: var(--ink); }
+  .note .maplink { margin-left: 0; margin-top: 12px; }
+  .dist { list-style: none; margin: 8px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+  .dist li { font-size: 13px; padding: 3px 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); }
 
   .sources { font-size: 14px; color: var(--ink-2); padding-left: 18px; }
   .sources li + li { margin-top: 4px; }
@@ -367,7 +372,7 @@
     <p class="dates">Thứ Sáu 13/11 – Chủ Nhật 15/11/2026</p>
     <div class="chips">
       <span class="chip"><svg class="icon"><use href="#i-baby"/></svg>4 người lớn + 1 bé dưới 2 tuổi</span>
-      <span class="chip"><svg class="icon"><use href="#i-bed"/></svg>Nhận phòng 14:00 · Trả phòng 12:00</span>
+      <span class="chip"><svg class="icon"><use href="#i-bed"/></svg>Đêm thứ Sáu: Rêu Coffee &amp; Stay</span>
       <span class="chip"><svg class="icon"><use href="#i-walk"/></svg>Không chùa, đền · Không leo núi</span>
       <span class="chip hot"><svg class="icon"><use href="#i-fire"/></svg>Toàn điểm hot TikTok</span>
     </div>
@@ -382,6 +387,7 @@
 <nav class="nav" aria-label="Mục lục">
   <div class="wrap">
     <ul>
+      <li><a href="#cho-o">Chỗ ở</a></li>
       <li><a href="#thoi-tiet">Thời tiết</a></li>
       <li><a href="#ngay-1">Ngày 1 · 13/11</a></li>
       <li><a href="#ngay-2">Ngày 2 · 14/11</a></li>
@@ -415,10 +421,45 @@
       <div class="ov-icon"><svg class="icon"><use href="#i-moon"/></svg></div>
       <div>
         <h3>Giữ giờ ngủ trưa của bé</h3>
-        <p>Buổi trưa luôn về khách sạn. Lịch tính theo khách sạn ở khu Tam Cốc.</p>
+        <p>Buổi trưa luôn về chỗ ở nghỉ. Đêm thứ Sáu ở Rêu Coffee &amp; Stay, cách Tam Cốc và phố cổ khoảng 10 phút.</p>
       </div>
     </div>
   </div>
+
+  <!-- ================= CHỖ Ở ================= -->
+  <section id="cho-o">
+    <div class="sec-head">
+      <div class="eyebrow">Chỗ ở</div>
+      <h2>Đêm thứ Sáu ở Rêu Coffee &amp; Stay</h2>
+      <p>Rêu nằm giữa Tam Cốc và phố cổ Hoa Lư, đi đâu cũng chỉ khoảng 10 phút.</p>
+    </div>
+    <div class="notes">
+      <div class="card note">
+        <div class="ov-icon"><svg class="icon"><use href="#i-bed"/></svg></div>
+        <div>
+          <h3>Thứ Sáu 13/11 · Rêu Coffee &amp; Stay</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>5,0 <span>· 341 đánh giá Google</span></div>
+          <p>Homestay kèm quán cà phê, cà phê muối được khen nhiều. Nhận phòng 14:00. Điện thoại: <a href="tel:+84969221138">0969 221 138</a>.</p>
+          <ul class="dist">
+            <li>Bến đò Tam Cốc ~10 phút</li>
+            <li>Phố cổ Hoa Lư ~10 phút</li>
+            <li>Tuyệt Tịnh Cốc ~20 phút</li>
+            <li>Green Pine Camp ~45 phút</li>
+          </ul>
+          <p>Quán có nuôi mèo, để ý nếu bé dị ứng lông. Gọi trước hỏi có cũi cho bé và có phục vụ ăn sáng không.</p>
+          <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+        </div>
+      </div>
+      <div class="card note">
+        <div class="ov-icon"><svg class="icon"><use href="#i-info"/></svg></div>
+        <div>
+          <h3>Thứ Bảy 14/11 · Chưa chốt</h3>
+          <p><b>Gợi ý: ở lại Rêu thêm 1 đêm.</b> Không phải dọn đồ giữa chừng khi có bé, buổi trưa về ngủ luôn, tối từ phố cổ về chỉ mất 10 phút.</p>
+          <p>Nếu đổi chỗ: chọn nơi gần phố cổ Hoa Lư hoặc Tam Cốc. Sáng thứ Bảy xếp hành lý lên xe trước khi đi đò, trả phòng Rêu, rồi nhận phòng mới lúc 14:00.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ================= THỜI TIẾT ================= -->
   <section id="thoi-tiet">
@@ -568,8 +609,11 @@
         <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
         <div class="card ev-card">
           <div class="ev-time num">13:30 – 15:45</div>
-          <h3>Về Tam Cốc nhận phòng, bé ngủ trưa</h3>
-          <p class="desc">Đi xe khoảng 20 phút. Giờ nhận phòng 14:00, nên gọi trước xin nhận sớm và nhờ khách sạn kê sẵn cũi cho bé.</p>
+          <h3>Về Rêu Coffee &amp; Stay nhận phòng, bé ngủ trưa</h3>
+          <p class="desc">Từ Cường Dê đi xe khoảng 20 phút. Giờ nhận phòng 14:00, nên gọi trước xin nhận sớm và hỏi có cũi cho bé.</p>
+          <div class="ev-foot">
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
         </div>
       </li>
 
@@ -579,7 +623,7 @@
           <div class="ev-time num">16:15 – 17:45 · Cà phê ngắm hoàng hôn</div>
           <h3>Tam Cốc Mountain Side Coffee</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,8 <span>· 843 đánh giá Google</span></div>
-          <p class="desc">Quán cà phê ngay dưới chân núi đá, cách bến Tam Cốc khoảng 1 km. Ngồi ngắm hoàng hôn, mặt trời lặn lúc 17:16.</p>
+          <p class="desc">Quán cà phê ngay dưới chân núi đá, cách bến Tam Cốc khoảng 1 km, từ Rêu đi xe khoảng 10 phút. Ngồi ngắm hoàng hôn, mặt trời lặn lúc 17:16.</p>
           <div class="ev-foot">
             <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 19:30</span>
             <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=TAM+C%E1%BB%90C+MOUNTAIN+SIDE+COFFEE" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
@@ -593,11 +637,20 @@
           <div class="ev-time num">18:30 – 19:45 · Ăn tối</div>
           <h3>Cơm Niêu Tam Cốc – Claypot Rice</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,9 <span>· 1.438 đánh giá Google</span></div>
-          <p class="desc">Trên đường ĐT491C, cách bến Tam Cốc khoảng 1,7 km. Cơm niêu và món quê, đổi vị sau bữa trưa ăn dê.</p>
+          <p class="desc">Trên đường ĐT491C, nằm giữa quán cà phê và Rêu (cách Rêu khoảng 2,5 km). Cơm niêu và món quê, đổi vị sau bữa trưa ăn dê.</p>
           <div class="ev-foot">
             <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở từ 10:00</span>
             <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=C%C6%A1m+Ni%C3%AAu+Tam+C%E1%BB%91c+CLAYPOT+RICE+RESTAURANT" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
           </div>
+        </div>
+      </li>
+
+      <li class="ev t-move">
+        <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">19:45</div>
+          <h3>Về Rêu nghỉ</h3>
+          <p class="desc">Khoảng 7 phút đi xe. Ngủ sớm để sáng mai ra bến đò lúc 6:45.</p>
         </div>
       </li>
     </ol>
@@ -623,8 +676,9 @@
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">06:30 · Ăn sáng</div>
-          <h3>Ăn sáng ở khách sạn</h3>
+          <div class="ev-time num">06:15 · Ăn sáng</div>
+          <h3>Ăn sáng nhẹ ở Rêu</h3>
+          <p class="desc">Hỏi trước chủ nhà có phục vụ bữa sáng không. Nếu không, chuẩn bị bánh mì và sữa từ tối hôm trước. 6:45 lái xe ra bến Tam Cốc, khoảng 10 phút.</p>
         </div>
       </li>
 
@@ -678,8 +732,8 @@
         <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
         <div class="card ev-card">
           <div class="ev-time num">12:30 – 15:45</div>
-          <h3>Về khách sạn nghỉ trưa</h3>
-          <p class="desc">Bé ngủ trưa, người lớn nghỉ ngơi để tối đi phố cổ.</p>
+          <h3>Về chỗ ở nghỉ trưa</h3>
+          <p class="desc">Nếu ở lại Rêu thì về nghỉ luôn, khoảng 10 phút. Nếu đổi chỗ ở thì nhận phòng mới (thường 14:00), nên xin nhận sớm. Bé ngủ trưa, người lớn nghỉ ngơi để tối đi phố cổ.</p>
         </div>
       </li>
 
@@ -689,7 +743,7 @@
           <div class="ev-time num">16:15 – 20:00</div>
           <h3>Phố cổ Hoa Lư<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,6 <span>· hơn 10.000 đánh giá Google</span></div>
-          <p class="desc">Phố đèn lồng quanh hồ và núi Kỳ Lân ở trung tâm Ninh Bình, cách Tam Cốc khoảng 20 phút đi xe. Đến trước hoàng hôn để chụp ảnh lúc trời còn sáng, rồi ở lại xem phố lên đèn. Buổi tối có hát chèo và trò chơi dân gian.</p>
+          <p class="desc">Phố đèn lồng quanh hồ và núi Kỳ Lân ở trung tâm Ninh Bình, cách Rêu khoảng 10 phút đi xe. Đến trước hoàng hôn để chụp ảnh lúc trời còn sáng, rồi ở lại xem phố lên đèn. Buổi tối có hát chèo và trò chơi dân gian.</p>
           <ul class="pts">
             <li>Mở cửa đến 23:00, không bán vé vào phố*</li>
             <li>Đường bằng phẳng, dùng được xe đẩy</li>
@@ -719,8 +773,8 @@
         <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
         <div class="card ev-card">
           <div class="ev-time num">20:00</div>
-          <h3>Về khách sạn</h3>
-          <p class="desc">Khoảng 20 phút đi xe. Về sớm để mai đi Green Pine Camp từ sáng.</p>
+          <h3>Về chỗ ở</h3>
+          <p class="desc">Về Rêu khoảng 10 phút. Về sớm để mai đi Green Pine Camp từ sáng.</p>
         </div>
       </li>
     </ol>
@@ -747,7 +801,7 @@
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
           <div class="ev-time num">06:45 · Ăn sáng</div>
-          <h3>Ăn sáng ở khách sạn</h3>
+          <h3>Ăn sáng ở chỗ ở</h3>
         </div>
       </li>
 
@@ -756,7 +810,7 @@
         <div class="card ev-card">
           <div class="ev-time num">07:30</div>
           <h3>Đi Green Pine Camp</h3>
-          <p class="desc">Khoảng 40 phút đi xe lên Nho Quan. Hành lý để lại khách sạn.</p>
+          <p class="desc">Từ Rêu đi xe khoảng 45 phút lên Nho Quan. Hành lý để lại chỗ ở.</p>
         </div>
       </li>
 
@@ -777,8 +831,8 @@
         <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
         <div class="card ev-card">
           <div class="ev-time num">10:30 – 11:50</div>
-          <h3>Về khách sạn, trả phòng</h3>
-          <p class="desc">Khoảng 40 phút đi xe. Thu dọn đồ, trả phòng trước 12:00.</p>
+          <h3>Về chỗ ở, trả phòng</h3>
+          <p class="desc">Khoảng 45 phút đi xe. Thu dọn đồ, trả phòng trước 12:00.</p>
         </div>
       </li>
 
@@ -788,7 +842,7 @@
           <div class="ev-time num">12:00 – 13:00 · Ăn trưa</div>
           <h3>Nhà hàng Năm Dê (CS15)</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,7 <span>· 1.429 đánh giá Google</span></div>
-          <p class="desc">Trên đường ĐT491, cách Tam Cốc khoảng 3 km (chừng 10 phút), nằm trên đường ra cao tốc. Ăn dê núi, cơm cháy, mua thêm cơm cháy mang về.</p>
+          <p class="desc">Trên đường ĐT491, cách Rêu khoảng 1,5 km, nằm trên đường ra cao tốc. Ăn dê núi, cơm cháy, mua thêm cơm cháy mang về.</p>
           <div class="ev-foot">
             <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 21:00</span>
             <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
@@ -848,8 +902,8 @@
             <td class="r num">từ 10:00</td>
           </tr>
           <tr>
-            <td><span class="when num">06:30</span><span class="day-tag">Ngày 2</span></td>
-            <td>Khách sạn<small>Ăn sáng</small></td>
+            <td><span class="when num">06:15</span><span class="day-tag">Ngày 2</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Rêu Coffee &amp; Stay</a><small>Ăn sáng nhẹ · hỏi chủ nhà trước</small></td>
             <td class="hide-sm">—</td>
             <td class="r">—</td>
           </tr>
@@ -873,13 +927,13 @@
           </tr>
           <tr>
             <td><span class="when num">06:45</span><span class="day-tag">Ngày 3</span></td>
-            <td>Khách sạn<small>Ăn sáng</small></td>
+            <td>Chỗ ở đêm thứ Bảy<small>Ăn sáng</small></td>
             <td class="hide-sm">—</td>
             <td class="r">—</td>
           </tr>
           <tr>
             <td><span class="when num">12:00</span><span class="day-tag">Ngày 3</span></td>
-            <td><a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener">Nhà hàng Năm Dê (CS15)</a><small>Trưa · dê núi, cơm cháy · cách Tam Cốc ~3 km, trên đường ra cao tốc</small></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener">Nhà hàng Năm Dê (CS15)</a><small>Trưa · dê núi, cơm cháy · cách Rêu ~1,5 km, trên đường ra cao tốc</small></td>
             <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (1.429)</span></td>
             <td class="r num">đến 21:00</td>
           </tr>
@@ -967,7 +1021,7 @@
         <li><label><input type="checkbox" data-k="sua"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Sữa, bình giữ nhiệt nước ấm</b><span>Pha sữa trên xe và trên đò</span></span></label></li>
         <li><label><input type="checkbox" data-k="thuoc"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Thuốc thường dùng, nhiệt kế</b><span>Theo đơn bác sĩ của bé</span></span></label></li>
         <li><label><input type="checkbox" data-k="ghe"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Ghế ô tô cho bé</b><span>Lắp sẵn trên xe từ hôm trước</span></span></label></li>
-        <li><label><input type="checkbox" data-k="cui"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Báo khách sạn kê cũi</b><span>Gọi xác nhận trước ngày 13/11</span></span></label></li>
+        <li><label><input type="checkbox" data-k="cui"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Hỏi Rêu có cũi cho bé</b><span>Gọi 0969 221 138 trước ngày 13/11</span></span></label></li>
       </ul>
     </div>
   </section>
