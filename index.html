@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Lịch trình Ninh Bình</title>
+<meta name="description" content="Lịch trình Hà Nội – Ninh Bình 13–15/11/2026 cho 4 người lớn và 1 bé dưới 2 tuổi: điểm hot TikTok, quán ăn cụ thể, thời tiết từng ngày và giá vé.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f7faf8;
+    --surface: #ffffff;
+    --surface-2: #f0f5f2;
+    --ink: #1e2b27;
+    --ink-2: #4b5a55;
+    --muted: #7b8984;
+    --line: #e2e9e5;
+    --accent: #0f8a70;
+    --accent-ink: #ffffff;
+    --accent-soft: #e0f4ec;
+    --warm: #e2703a;
+    --warm-soft: #fdeee5;
+    --sky: #2c7fc4;
+    --sky-soft: #e4f0fb;
+    --rest: #8661c8;
+    --rest-soft: #f1ebfb;
+    --hot: #d63a6a;
+    --hot-soft: #ffe9f0;
+    --gold: #e9a21b;
+    --note-bg: #fff7e6;
+    --note-line: #f3d79c;
+    --note-ink: #6e4b0c;
+    --shadow: 0 1px 2px rgba(30, 43, 39, .04), 0 6px 20px rgba(30, 43, 39, .06);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, input:focus-visible + .box {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  h1, h2, h3 { line-height: 1.25; margin: 0; }
+  p { margin: 0; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+  @media (min-width: 768px) { .wrap { padding: 0 32px; } }
+  .icon { width: 1em; height: 1em; flex: none; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    background: linear-gradient(170deg, #def5ec 0%, #e3f0fb 70%, #f7faf8 100%);
+    overflow: hidden;
+  }
+  .hero-inner { position: relative; z-index: 1; padding-top: 40px; padding-bottom: 120px; }
+  @media (min-width: 768px) { .hero-inner { padding-top: 64px; padding-bottom: 150px; } }
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .hero .eyebrow { color: var(--accent); }
+  .hero h1 {
+    margin-top: 10px;
+    font-size: clamp(32px, 7vw, 56px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: #0d4f42;
+  }
+  .hero .dates { margin-top: 8px; font-size: clamp(17px, 2.6vw, 21px); color: var(--ink-2); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 14px; font-weight: 500; color: var(--ink);
+    background: rgba(255, 255, 255, .8);
+    border: 1px solid rgba(15, 138, 112, .18);
+  }
+  .chip .icon { color: var(--accent); }
+  .chip.hot { background: var(--hot-soft); border-color: rgba(214, 58, 106, .25); color: var(--hot); }
+  .chip.hot .icon { color: var(--hot); }
+  .karst { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 130px; display: block; }
+  @media (min-width: 768px) { .karst { height: 170px; } }
+  .karst .far { fill: #cbe9dd; }
+  .karst .mid { fill: #a9dbc6; }
+  .karst .near { fill: var(--bg); }
+
+  /* ---------- Sticky nav ---------- */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(247, 250, 248, .9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav ul {
+    list-style: none; margin: 0; padding: 10px 0;
+    display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none;
+  }
+  .nav ul::-webkit-scrollbar { display: none; }
+  .nav a {
+    display: block; white-space: nowrap;
+    padding: 7px 14px; border-radius: 999px;
+    font-size: 14px; font-weight: 500; color: var(--ink-2); text-decoration: none;
+  }
+  .nav a:hover { background: var(--surface-2); }
+  .nav a.active { background: var(--accent); color: var(--accent-ink); }
+
+  /* ---------- Sections ---------- */
+  section { padding: 48px 0 8px; }
+  .sec-head { margin-bottom: 24px; }
+  .sec-head .eyebrow { color: var(--warm); }
+  .sec-head h2 { margin-top: 6px; font-size: clamp(24px, 4vw, 32px); font-weight: 700; letter-spacing: -.01em; }
+  .sec-head p { margin-top: 8px; color: var(--ink-2); max-width: 680px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  /* ---------- Overview ---------- */
+  .overview { margin-top: 24px; display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 768px) { .overview { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .ov { padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+  .ov-icon {
+    width: 40px; height: 40px; flex: none; border-radius: 12px;
+    display: grid; place-items: center;
+    background: var(--accent-soft); color: var(--accent); font-size: 20px;
+  }
+  .ov h3 { font-size: 15px; font-weight: 600; }
+  .ov p { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+
+  /* ---------- Weather ---------- */
+  .wx-grid { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 900px) { .wx-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .wx { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .wx-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  .wx-day { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+  .wx-date { font-size: 19px; font-weight: 700; margin-top: 2px; white-space: nowrap; }
+  .wx-ico { width: 44px; height: 44px; flex: none; color: var(--warm); }
+  .wx-temp { font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
+  .wx-temp small { font-size: 16px; font-weight: 500; color: var(--muted); }
+  .rain {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 14px; border-radius: 12px;
+    font-size: 16px; font-weight: 700;
+  }
+  .rain .icon { font-size: 20px; }
+  .rain.dry { background: var(--warm-soft); color: #b9541f; }
+  .rain.wet { background: var(--sky-soft); color: var(--sky); }
+  .wx dl { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; font-size: 14px; }
+  .wx dt { color: var(--muted); }
+  .wx dd { margin: 0; font-weight: 600; text-align: right; white-space: nowrap; }
+  .wx .wear { font-size: 14px; color: var(--ink-2); padding: 10px 12px; border-radius: 10px; background: var(--surface-2); }
+  .wx .wear strong { color: var(--ink); }
+
+  .callout {
+    margin-top: 16px; padding: 16px 18px; border-radius: 14px;
+    background: var(--note-bg); border: 1px solid var(--note-line); color: var(--note-ink);
+    font-size: 15px; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .callout .icon { font-size: 20px; margin-top: 2px; }
+  .callout p + p { margin-top: 6px; }
+  .fineprint { margin-top: 12px; font-size: 13px; color: var(--muted); }
+
+  /* ---------- Days ---------- */
+  .day { display: grid; gap: 20px; padding: 40px 0 16px; border-top: 1px solid var(--line); }
+  @media (min-width: 960px) {
+    .day { grid-template-columns: 300px minmax(0, 1fr); gap: 48px; }
+    .day-aside { position: sticky; top: 76px; align-self: start; }
+  }
+  .day-num { display: flex; align-items: center; gap: 10px; }
+  .day-num .eyebrow { color: var(--warm); }
+  .today { display: none; font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: var(--warm); color: #fff; }
+  .day.is-today .today { display: inline-block; }
+  .day h2 { margin-top: 6px; font-size: clamp(24px, 4vw, 30px); font-weight: 700; }
+  .day .theme { margin-top: 6px; color: var(--ink-2); }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 500;
+    padding: 5px 11px; border-radius: 999px;
+    background: var(--surface-2); color: var(--ink-2);
+  }
+  .pill .icon { font-size: 15px; }
+  .pill.wx-pill { background: var(--warm-soft); color: #b9541f; }
+  .pill.wx-pill.wet { background: var(--sky-soft); color: var(--sky); }
+  .day-aside .keys { margin: 16px 0 0; padding: 0; list-style: none; font-size: 14px; color: var(--ink-2); }
+  .day-aside .keys li { padding: 6px 0; border-top: 1px dashed var(--line); }
+  .day-aside .keys li:first-child { border-top: 0; }
+  .day-aside .keys b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 959px) { .day-aside .keys { display: none; } }
+
+  .tl { list-style: none; margin: 0; padding: 0; }
+  .ev { position: relative; padding: 0 0 16px 44px; --c: var(--accent); --c-soft: var(--accent-soft); }
+  .ev::before { content: ""; position: absolute; left: 15px; top: 34px; bottom: 0; width: 2px; background: var(--line); }
+  .ev:last-child::before { display: none; }
+  .ev.t-move { --c: var(--sky); --c-soft: var(--sky-soft); }
+  .ev.t-food { --c: var(--warm); --c-soft: var(--warm-soft); }
+  .ev.t-rest { --c: var(--rest); --c-soft: var(--rest-soft); }
+  .ev-dot {
+    position: absolute; left: 0; top: 2px;
+    width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 16px;
+    background: var(--c-soft); color: var(--c);
+    border: 2px solid var(--surface); box-shadow: 0 0 0 1px var(--line);
+  }
+  .ev-card { padding: 14px 16px 16px; }
+  .ev-time { font-size: 14px; font-weight: 700; color: var(--c); }
+  .ev h3 { font-size: 17px; font-weight: 600; margin-top: 2px; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 12px; font-weight: 700; vertical-align: middle;
+    padding: 2px 8px; border-radius: 999px; margin-left: 6px; white-space: nowrap;
+  }
+  .tag .icon { font-size: 12px; }
+  .tag-hot { background: var(--hot-soft); color: var(--hot); }
+  .rating {
+    display: inline-flex; align-items: center; gap: 4px;
+    margin-top: 4px; font-size: 14px; font-weight: 600; color: var(--ink);
+  }
+  .rating .icon { color: var(--gold); }
+  .rating span { color: var(--muted); font-weight: 400; }
+  .ev p.desc { margin-top: 6px; font-size: 15px; color: var(--ink-2); }
+  .ev ul.pts { margin: 8px 0 0; padding-left: 18px; font-size: 15px; color: var(--ink-2); }
+  .ev ul.pts li + li { margin-top: 2px; }
+  .ev .skip { margin-top: 10px; font-size: 14px; padding: 8px 12px; border-radius: 10px; background: var(--surface-2); color: var(--ink-2); }
+  .ev .skip b { color: var(--ink); }
+  .ev-foot {
+    margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+  }
+  .price { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .price .icon { color: var(--warm); }
+  .mini { display: inline-flex; align-items: center; gap: 5px; font-size: 13px; color: var(--muted); }
+  .maplink {
+    margin-left: auto;
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    padding: 6px 12px; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+  .maplink:hover { text-decoration: underline; }
+
+  /* ---------- Tables ---------- */
+  .table-wrap { overflow-x: auto; border-radius: 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 15px; }
+  th, td { padding: 12px 16px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; font-weight: 600; color: var(--muted); background: var(--surface-2); }
+  td.r, th.r { text-align: right; white-space: nowrap; }
+  td small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  td .when { font-weight: 700; color: var(--warm); white-space: nowrap; }
+  td .day-tag { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; }
+  td a { font-weight: 600; text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  td .stars { white-space: nowrap; font-weight: 600; }
+  td .stars .icon { color: var(--gold); vertical-align: -2px; }
+  tr.free td { color: var(--ink-2); }
+  tr.total td { font-weight: 700; font-size: 16px; border-bottom: 0; background: var(--accent-soft); color: var(--ink); }
+  tr.total td.r { color: var(--accent); }
+  @media (max-width: 560px) {
+    th, td { padding: 10px 12px; font-size: 14px; }
+    .hide-sm { display: none; }
+  }
+  .extras { margin-top: 16px; display: grid; gap: 10px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 720px) { .extras { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .extra { padding: 14px 16px; font-size: 14px; color: var(--ink-2); }
+  .extra b { display: block; color: var(--ink); font-size: 15px; }
+
+  /* ---------- Checklist ---------- */
+  .check-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
+  .check-head strong { font-size: 15px; }
+  .progress { flex: 1; max-width: 200px; height: 8px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+  .progress span { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s ease; }
+  .checks { list-style: none; margin: 0; padding: 8px 8px 12px; display: grid; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 720px) { .checks { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .checks label { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; border-radius: 10px; cursor: pointer; }
+  .checks label:hover { background: var(--surface-2); }
+  .checks input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .box {
+    width: 22px; height: 22px; flex: none; margin-top: 1px;
+    border-radius: 6px; border: 2px solid #cdd8d2;
+    display: grid; place-items: center; color: transparent; background: var(--surface);
+  }
+  .checks input:checked + .box { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+  .checks input:checked ~ .txt b { text-decoration: line-through; color: var(--muted); }
+  .txt { font-size: 15px; }
+  .txt b { font-weight: 600; }
+  .txt span { display: block; color: var(--muted); font-size: 13px; }
+
+  /* ---------- Notes ---------- */
+  .notes { display: grid; gap: 12px; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 720px) { .notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .note { padding: 16px 18px; display: flex; gap: 14px; }
+  .note .ov-icon { width: 36px; height: 36px; font-size: 18px; }
+  .note h3 { font-size: 15px; font-weight: 600; }
+  .note p { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+
+  .sources { font-size: 14px; color: var(--ink-2); padding-left: 18px; }
+  .sources li + li { margin-top: 4px; }
+  footer { padding: 40px 0 56px; color: var(--muted); font-size: 13px; text-align: center; }
+
+  @media print {
+    .nav, .maplink, .karst { display: none !important; }
+    .hero { background: none; }
+    .card { box-shadow: none; }
+    .day-aside { position: static; }
+    .ev { break-inside: avoid; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l1.6-4.3A2 2 0 0 1 8.5 6.4h7a2 2 0 0 1 1.9 1.3L19 12"/><rect x="3" y="12" width="18" height="5" rx="2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></symbol>
+    <symbol id="i-boat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 14h18l-2 4H5z"/><path d="M14 14l-4-9"/><path d="M2 21c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/></symbol>
+    <symbol id="i-food" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M8 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4"/></symbol>
+    <symbol id="i-coffee" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3c0 1.5 1 1.5 1 3M12 3c0 1.5 1 1.5 1 3"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></symbol>
+    <symbol id="i-lantern" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v3M9 5h6"/><ellipse cx="12" cy="12" rx="6" ry="7"/><path d="M12 5v14M9 19h6M12 19v3"/></symbol>
+    <symbol id="i-walk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="4" r="2"/><path d="M9 21l2-6 3 3v3M7 12l3-4 4 1 2 3M11 15l1-5"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8.5 7l1.5-3h4l1.5 3"/></symbol>
+    <symbol id="i-lake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15l4-8 3 5 3-7 4 7 1-2 3 5"/><path d="M2 19c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/></symbol>
+    <symbol id="i-pine" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l5 7h-3l4 6H6l4-6H7z"/><path d="M12 16v5"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-ticket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8a2 2 0 0 0 0 4v0a2 2 0 0 1 0 4v2h18v-2a2 2 0 0 1 0-4 2 2 0 0 0 0-4V6H3z"/><path d="M14 6v12" stroke-dasharray="2 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3.5 5 5.5 5 11a5 5 0 0 1-10 0c0-2.4 1.2-4 2.4-5 .1 1.6.8 2.6 1.8 3 .2-3.4-.7-6.4.8-9z"/></symbol>
+    <symbol id="i-sun-cloud" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="17" r="7"/><path d="M18 4v3M18 27v3M5 17h3M7.8 6.8l2.1 2.1M26.2 6.8l-2.1 2.1M7.8 27.2l2.1-2.1"/><path d="M20 40h17a7 7 0 0 0 0-14 9 9 0 0 0-16.5 3A5.5 5.5 0 0 0 20 40z" fill="#ffffff"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v7a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-baby" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M10 7.5h.01M14 7.5h.01M10.5 10a2 2 0 0 0 3 0"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="eyebrow">Hà Nội → Ninh Bình · 3 ngày 2 đêm</div>
+    <h1>Lịch trình Ninh Bình</h1>
+    <p class="dates">Thứ Sáu 13/11 – Chủ Nhật 15/11/2026</p>
+    <div class="chips">
+      <span class="chip"><svg class="icon"><use href="#i-baby"/></svg>4 người lớn + 1 bé dưới 2 tuổi</span>
+      <span class="chip"><svg class="icon"><use href="#i-bed"/></svg>Nhận phòng 14:00 · Trả phòng 12:00</span>
+      <span class="chip"><svg class="icon"><use href="#i-walk"/></svg>Không chùa, đền · Không leo núi</span>
+      <span class="chip hot"><svg class="icon"><use href="#i-fire"/></svg>Toàn điểm hot TikTok</span>
+    </div>
+  </div>
+  <svg class="karst" viewBox="0 0 1200 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path class="far" d="M0 170V118 L-20 118 C-9 94 -13 48 25 48 C63 48 59 94 70 118 L60 118 C68 85 66 23 95 23 C124 23 122 85 130 118 L120 118 C133 97 129 58 175 58 C221 58 217 97 230 118 L215 118 C225 80 221 10 255 10 C289 10 285 80 295 118 L285 118 C296 93 292 46 330 46 C368 46 364 93 375 118 L360 118 C368 79 366 6 395 6 C424 6 422 79 430 118 L420 118 C434 98 430 60 480 60 C530 60 526 98 540 118 L530 118 C540 83 536 18 570 18 C604 18 600 83 610 118 L600 118 C611 90 607 38 645 38 C683 38 679 90 690 118 L680 118 C688 79 686 8 715 8 C744 8 742 79 750 118 L740 118 C753 96 749 54 795 54 C841 54 837 96 850 118 L840 118 C850 82 846 14 880 14 C914 14 910 82 920 118 L910 118 C921 91 917 42 955 42 C993 42 989 91 1000 118 L990 118 C998 79 996 6 1025 6 C1054 6 1052 79 1060 118 L1050 118 C1062 95 1058 52 1100 52 C1142 52 1138 95 1150 118 L1140 118 C1150 84 1146 22 1180 22 C1214 22 1210 84 1220 118 L1200 118 V170z"/>
+    <path class="mid" d="M0 170V140 L-10 140 C3 120 -1 82 45 82 C91 82 87 120 100 140 L90 140 C101 112 97 60 135 60 C173 60 169 112 180 140 L170 140 C184 123 180 92 230 92 C280 92 276 123 290 140 L280 140 C291 114 287 66 325 66 C363 66 359 114 370 140 L360 140 C373 125 369 96 415 96 C461 96 457 125 470 140 L460 140 C471 110 467 54 505 54 C543 54 539 110 550 140 L540 140 C554 122 550 88 600 88 C650 88 646 122 660 140 L650 140 C661 116 657 70 695 70 C733 70 729 116 740 140 L730 140 C743 124 739 94 785 94 C831 94 827 124 840 140 L830 140 C841 111 837 58 875 58 C913 58 909 111 920 140 L910 140 C924 123 920 90 970 90 C1020 90 1016 123 1030 140 L1020 140 C1031 115 1027 68 1065 68 C1103 68 1099 115 1110 140 L1100 140 C1113 121 1109 86 1155 86 C1201 86 1197 121 1210 140 L1200 140 V170z"/>
+    <path class="near" d="M0 170V150 C200 146 400 154 600 150 S1000 146 1200 150 V170z"/>
+  </svg>
+</header>
+
+<nav class="nav" aria-label="Mục lục">
+  <div class="wrap">
+    <ul>
+      <li><a href="#thoi-tiet">Thời tiết</a></li>
+      <li><a href="#ngay-1">Ngày 1 · 13/11</a></li>
+      <li><a href="#ngay-2">Ngày 2 · 14/11</a></li>
+      <li><a href="#ngay-3">Ngày 3 · 15/11</a></li>
+      <li><a href="#an-uong">Ăn uống</a></li>
+      <li><a href="#chi-phi">Giá vé</a></li>
+      <li><a href="#cho-be">Đồ cho bé</a></li>
+      <li><a href="#luu-y">Lưu ý</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <div class="overview">
+    <div class="card ov">
+      <div class="ov-icon"><svg class="icon"><use href="#i-car"/></svg></div>
+      <div>
+        <h3>Đi xe riêng 7 chỗ</h3>
+        <p>Cao tốc Pháp Vân – Cầu Giẽ – Ninh Bình, khoảng 2 giờ mỗi chiều. Nhớ hỏi nhà xe ghế ô tô cho bé.</p>
+      </div>
+    </div>
+    <div class="card ov">
+      <div class="ov-icon"><svg class="icon"><use href="#i-camera"/></svg></div>
+      <div>
+        <h3>Điểm giới trẻ đang đi</h3>
+        <p>Ô Trấn – Starbucks Tràng An, Tuyệt Tịnh Cốc, đò Tam Cốc, phố cổ Hoa Lư và Green Pine Camp. Không có chùa, đền, cũng không phải leo núi.</p>
+      </div>
+    </div>
+    <div class="card ov">
+      <div class="ov-icon"><svg class="icon"><use href="#i-moon"/></svg></div>
+      <div>
+        <h3>Giữ giờ ngủ trưa của bé</h3>
+        <p>Buổi trưa luôn về khách sạn. Lịch tính theo khách sạn ở khu Tam Cốc.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= THỜI TIẾT ================= -->
+  <section id="thoi-tiet">
+    <div class="sec-head">
+      <div class="eyebrow">Thời tiết từng ngày</div>
+      <h2>Mát, nắng nhẹ, hầu như không mưa</h2>
+      <p>Trưa ấm khoảng 26°C, sáng sớm và tối se lạnh khoảng 19–21°C.</p>
+    </div>
+
+    <div class="wx-grid">
+      <article class="card wx">
+        <div class="wx-top">
+          <div><div class="wx-day">Thứ Sáu</div><div class="wx-date">13/11 · Ngày 1</div></div>
+          <svg class="wx-ico" aria-label="Nắng xen mây"><use href="#i-sun-cloud"/></svg>
+        </div>
+        <div class="wx-temp num">19° – 26°<small>C</small></div>
+        <div><span class="rain wet"><svg class="icon"><use href="#i-umbrella"/></svg>Có thể mưa nhỏ</span></div>
+        <dl>
+          <dt>Sáng sớm</dt><dd class="num">19–21°C</dd>
+          <dt>Buổi trưa</dt><dd class="num">25–26°C</dd>
+          <dt>Buổi tối</dt><dd class="num">20–22°C</dd>
+          <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
+        </dl>
+        <p class="wear"><strong>Mặc gì:</strong> áo thun, mang thêm áo khoác mỏng. Bé mặc áo dài tay mỏng. Để sẵn ô trên xe.</p>
+      </article>
+
+      <article class="card wx">
+        <div class="wx-top">
+          <div><div class="wx-day">Thứ Bảy</div><div class="wx-date">14/11 · Ngày 2</div></div>
+          <svg class="wx-ico" aria-label="Nắng xen mây"><use href="#i-sun-cloud"/></svg>
+        </div>
+        <div class="wx-temp num">19° – 26°<small>C</small></div>
+        <div><span class="rain dry"><svg class="icon"><use href="#i-sun"/></svg>Không mưa</span></div>
+        <dl>
+          <dt>Lúc đi đò (7–9h)</dt><dd class="num">19–22°C</dd>
+          <dt>Buổi trưa</dt><dd class="num">25–26°C</dd>
+          <dt>Tối ở phố cổ</dt><dd class="num">20–22°C</dd>
+          <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
+        </dl>
+        <p class="wear"><strong>Mặc gì:</strong> sáng sớm trên đò có gió, bé cần áo khoác và mũ. Đò không có mái che.</p>
+      </article>
+
+      <article class="card wx">
+        <div class="wx-top">
+          <div><div class="wx-day">Chủ Nhật</div><div class="wx-date">15/11 · Ngày 3</div></div>
+          <svg class="wx-ico" aria-label="Nắng xen mây"><use href="#i-sun-cloud"/></svg>
+        </div>
+        <div class="wx-temp num">20° – 27°<small>C</small></div>
+        <div><span class="rain dry"><svg class="icon"><use href="#i-sun"/></svg>Không mưa</span></div>
+        <dl>
+          <dt>Sáng ở hồ Đồng Chương</dt><dd class="num">20–22°C</dd>
+          <dt>Buổi trưa</dt><dd class="num">26–27°C</dd>
+          <dt>Lúc về Hà Nội</dt><dd class="num">25–26°C</dd>
+          <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
+        </dl>
+        <p class="wear"><strong>Mặc gì:</strong> sáng ở đồi thông bên hồ mát, mặc thêm áo khoác cho bé. Để một bộ đồ dự phòng cho bé trên xe về.</p>
+      </article>
+    </div>
+
+    <div class="callout" role="note">
+      <svg class="icon"><use href="#i-info"/></svg>
+      <div>
+        <p><strong>Lưu ý:</strong> dự báo hôm 29/10 cho thấy có thể có đợt gió mùa kèm mưa khoảng 10–12/11, nhiệt độ chỉ 17–21°C. Nếu đợt lạnh kéo sang 13/11, cần mang thêm áo ấm, tất và mũ len cho bé.</p>
+        <p>Nên xem lại dự báo ngày 10–11/11 trên <a href="https://nchmf.gov.vn/" target="_blank" rel="noopener">nchmf.gov.vn</a>.</p>
+      </div>
+    </div>
+    <p class="fineprint">Nhiệt độ và khả năng mưa tính theo thời tiết đúng các ngày 13–15/11 trong 16 năm qua (2010–2025) ở khu Tam Cốc, dữ liệu Open-Meteo.</p>
+  </section>
+
+  <!-- ================= NGÀY 1 ================= -->
+  <section id="ngay-1" class="day" data-date="2026-11-13">
+    <aside class="day-aside">
+      <div class="day-num"><span class="eyebrow">Ngày 1</span><span class="today">Hôm nay</span></div>
+      <h2>Thứ Sáu 13/11</h2>
+      <p class="theme">Starbucks Tràng An, Tuyệt Tịnh Cốc, chiều ngắm hoàng hôn ở quán cà phê chân núi.</p>
+      <div class="pills">
+        <span class="pill wx-pill wet"><svg class="icon"><use href="#i-umbrella"/></svg>19–26°C · có thể mưa nhỏ</span>
+        <span class="pill"><svg class="icon"><use href="#i-car"/></svg>~2 giờ đường</span>
+      </div>
+      <ul class="keys">
+        <li><b>Vì sao đi Ô Trấn hôm nay?</b></li>
+        <li>Khu này cuối tuần rất đông, phải xếp hàng chụp ảnh. Sáng thứ Sáu khoảng 9 giờ là lúc vắng và đẹp nhất.</li>
+      </ul>
+    </aside>
+
+    <ol class="tl">
+      <li class="ev t-move">
+        <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">07:00</div>
+          <h3>Xuất phát từ Hà Nội</h3>
+          <p class="desc">Đi cao tốc Pháp Vân – Cầu Giẽ – Ninh Bình, khoảng 2 giờ. Đi sớm để tới Tràng An lúc 9 giờ. Ăn sáng trên đường hoặc ở trạm dừng nghỉ.</p>
+        </div>
+      </li>
+
+      <li class="ev">
+        <span class="ev-dot"><svg class="icon"><use href="#i-camera"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">09:00 – 10:15</div>
+          <h3>Starbucks Tràng An và "Ô Trấn Ninh Bình"<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
+          <p class="desc">Dãy nhà mái ngói, xà gỗ kiểu phố cổ nằm sát mép sông, đối diện Starbucks, ngay khu bến thuyền Tràng An. Trên mạng hay gọi là "Ô Trấn Ninh Bình". Ngồi uống cà phê và chụp ảnh, không cần mua vé đò Tràng An.</p>
+          <ul class="pts">
+            <li>Starbucks mở cửa 7:00 – 18:00</li>
+            <li>Khu sát mép sông: bế bé đứng phía trong lan can</li>
+          </ul>
+          <div class="ev-foot">
+            <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>Miễn phí · đồ uống tự trả</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev">
+        <span class="ev-dot"><svg class="icon"><use href="#i-lake"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">10:30 – 11:45</div>
+          <h3>Tuyệt Tịnh Cốc<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
+          <p class="desc">Thung lũng có hồ nước xanh, bốn bên là núi đá, cách Starbucks khoảng 10 phút đi xe. Đi bộ qua hầm xuyên núi khoảng 200 m là tới hồ Ao Giải. Đường ven hồ bằng phẳng, nhiều góc chụp ảnh đẹp.</p>
+          <p class="skip"><b>Bỏ qua:</b> lối bậc đá lên động Am Tiên. Đó là nơi thờ tự và phải leo nhiều bậc.</p>
+          <div class="ev-foot">
+            <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>100.000đ/người lớn</span>
+            <span class="mini"><svg class="icon"><use href="#i-walk"/></svg>Đường bằng</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Tuy%E1%BB%87t+T%E1%BB%8Bnh+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">12:00 – 13:15 · Ăn trưa</div>
+          <h3>Nhà hàng Cường Dê</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,8 <span>· 1.100 đánh giá Google</span></div>
+          <p class="desc">Cách Tuyệt Tịnh Cốc khoảng 700 m, khu Tràng An. Quán chuyên dê núi: nên gọi dê tái chanh, dê nướng và cơm cháy.</p>
+          <div class="ev-foot">
+            <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 22:00</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+H%C3%A0ng+C%C6%B0%E1%BB%9Dng+D%C3%AA+Tr%C3%A0ng+An" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-rest">
+        <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">13:30 – 15:45</div>
+          <h3>Về Tam Cốc nhận phòng, bé ngủ trưa</h3>
+          <p class="desc">Đi xe khoảng 20 phút. Giờ nhận phòng 14:00, nên gọi trước xin nhận sớm và nhờ khách sạn kê sẵn cũi cho bé.</p>
+        </div>
+      </li>
+
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-coffee"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">16:15 – 17:45 · Cà phê ngắm hoàng hôn</div>
+          <h3>Tam Cốc Mountain Side Coffee</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,8 <span>· 843 đánh giá Google</span></div>
+          <p class="desc">Quán cà phê ngay dưới chân núi đá, cách bến Tam Cốc khoảng 1 km. Ngồi ngắm hoàng hôn, mặt trời lặn lúc 17:16.</p>
+          <div class="ev-foot">
+            <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 19:30</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=TAM+C%E1%BB%90C+MOUNTAIN+SIDE+COFFEE" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">18:30 – 19:45 · Ăn tối</div>
+          <h3>Cơm Niêu Tam Cốc – Claypot Rice</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,9 <span>· 1.438 đánh giá Google</span></div>
+          <p class="desc">Trên đường ĐT491C, cách bến Tam Cốc khoảng 1,7 km. Cơm niêu và món quê, đổi vị sau bữa trưa ăn dê.</p>
+          <div class="ev-foot">
+            <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở từ 10:00</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=C%C6%A1m+Ni%C3%AAu+Tam+C%E1%BB%91c+CLAYPOT+RICE+RESTAURANT" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= NGÀY 2 ================= -->
+  <section id="ngay-2" class="day" data-date="2026-11-14">
+    <aside class="day-aside">
+      <div class="day-num"><span class="eyebrow">Ngày 2</span><span class="today">Hôm nay</span></div>
+      <h2>Thứ Bảy 14/11</h2>
+      <p class="theme">Sáng sớm đi đò Tam Cốc, cà phê, tối dạo phố cổ Hoa Lư lên đèn.</p>
+      <div class="pills">
+        <span class="pill wx-pill"><svg class="icon"><use href="#i-sun"/></svg>19–26°C · không mưa</span>
+        <span class="pill"><svg class="icon"><use href="#i-boat"/></svg>Đò ~2 giờ</span>
+      </div>
+      <ul class="keys">
+        <li><b>Vì sao đi đò lúc 7 giờ?</b></li>
+        <li>Thứ Bảy, từ khoảng 9 giờ bến Tam Cốc rất đông. Đi sớm thì trời mát, nước lặng, ảnh đẹp, và về kịp giờ ngủ trưa của bé.</li>
+      </ul>
+    </aside>
+
+    <ol class="tl">
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">06:30 · Ăn sáng</div>
+          <h3>Ăn sáng ở khách sạn</h3>
+        </div>
+      </li>
+
+      <li class="ev">
+        <span class="ev-dot"><svg class="icon"><use href="#i-boat"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">07:00 – 09:15</div>
+          <h3>Đi đò Tam Cốc<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
+          <p class="desc">Thuyền nan chèo tay trên sông Ngô Đồng, đi qua 3 hang: hang Cả, hang Hai, hang Ba. Cả đi lẫn về khoảng 2 giờ. Bến mở cửa lúc 7:00.</p>
+          <ul class="pts">
+            <li>Cả nhà đi vừa 1 đò (tối đa 4 người lớn), bé ngồi lòng bố mẹ</li>
+            <li>Đò không có mái che: mang mũ, ô và áo phao cỡ trẻ em</li>
+            <li>Khách thường gửi lái đò tiền bồi dưỡng, tùy tâm</li>
+          </ul>
+          <div class="ev-foot">
+            <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>Vé 120.000đ/người lớn · Đò 150.000đ/đò</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=B%E1%BA%BFn+thuy%E1%BB%81n+Tam+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-coffee"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">09:30 – 10:45 · Cà phê</div>
+          <h3>At Where</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,9 <span>· 1.050 đánh giá Google</span></div>
+          <p class="desc">Cách bến đò Tam Cốc khoảng 400 m, đi bộ được. Ngồi nghỉ, cho bé ăn nhẹ sau chuyến đò.</p>
+          <div class="ev-foot">
+            <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở từ 9:00</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=At+Where+cafe+Tam+C%E1%BB%91c" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">11:00 – 12:15 · Ăn trưa</div>
+          <h3>Nhà hàng Đức Dẫn</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,8 <span>· 591 đánh giá Google</span></div>
+          <p class="desc">Cách bến Tam Cốc khoảng 1,2 km. Món Việt và đặc sản Ninh Bình.</p>
+          <div class="ev-foot">
+            <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 23:00</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+H%C3%A0ng+%C4%90%E1%BB%A9c+D%E1%BA%ABn+Tam+C%E1%BB%91c" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-rest">
+        <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">12:30 – 15:45</div>
+          <h3>Về khách sạn nghỉ trưa</h3>
+          <p class="desc">Bé ngủ trưa, người lớn nghỉ ngơi để tối đi phố cổ.</p>
+        </div>
+      </li>
+
+      <li class="ev">
+        <span class="ev-dot"><svg class="icon"><use href="#i-lantern"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">16:15 – 20:00</div>
+          <h3>Phố cổ Hoa Lư<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,6 <span>· hơn 10.000 đánh giá Google</span></div>
+          <p class="desc">Phố đèn lồng quanh hồ và núi Kỳ Lân ở trung tâm Ninh Bình, cách Tam Cốc khoảng 20 phút đi xe. Đến trước hoàng hôn để chụp ảnh lúc trời còn sáng, rồi ở lại xem phố lên đèn. Buổi tối có hát chèo và trò chơi dân gian.</p>
+          <ul class="pts">
+            <li>Mở cửa đến 23:00, không bán vé vào phố*</li>
+            <li>Đường bằng phẳng, dùng được xe đẩy</li>
+          </ul>
+          <div class="ev-foot">
+            <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>Miễn phí*</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Ph%E1%BB%91+c%E1%BB%95+Hoa+L%C6%B0+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">18:00 – 19:15 · Ăn tối</div>
+          <h3>Nhà hàng Mộc Lan</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,7 <span>· 1.151 đánh giá Google</span></div>
+          <p class="desc">Ngay dưới núi Kỳ Lân, trong phố cổ. Tối thứ Bảy đông: gọi đặt bàn trước cho 4 người và xin 1 ghế em bé.</p>
+          <div class="ev-foot">
+            <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 22:00</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A0ng+M%E1%BB%99c+Lan+n%C3%BAi+K%E1%BB%B3+L%C3%A2n+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-move">
+        <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">20:00</div>
+          <h3>Về khách sạn</h3>
+          <p class="desc">Khoảng 20 phút đi xe. Về sớm để mai đi Green Pine Camp từ sáng.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= NGÀY 3 ================= -->
+  <section id="ngay-3" class="day" data-date="2026-11-15">
+    <aside class="day-aside">
+      <div class="day-num"><span class="eyebrow">Ngày 3</span><span class="today">Hôm nay</span></div>
+      <h2>Chủ Nhật 15/11</h2>
+      <p class="theme">Đồi thông và hồ Đồng Chương ("Đà Lạt thu nhỏ"), trả phòng, ăn trưa rồi về Hà Nội.</p>
+      <div class="pills">
+        <span class="pill wx-pill"><svg class="icon"><use href="#i-sun"/></svg>20–27°C · không mưa</span>
+        <span class="pill"><svg class="icon"><use href="#i-clock"/></svg>Trả phòng 12:00</span>
+      </div>
+      <ul class="keys">
+        <li><b>Vì sao đi Green Pine Camp sớm?</b></li>
+        <li>Buổi sáng có sương trên mặt hồ, đây là cảnh đẹp nhất. Đi sớm cũng kịp quay về trả phòng trước 12:00.</li>
+      </ul>
+    </aside>
+
+    <ol class="tl">
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">06:45 · Ăn sáng</div>
+          <h3>Ăn sáng ở khách sạn</h3>
+        </div>
+      </li>
+
+      <li class="ev t-move">
+        <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">07:30</div>
+          <h3>Đi Green Pine Camp</h3>
+          <p class="desc">Khoảng 40 phút đi xe lên Nho Quan. Hành lý để lại khách sạn.</p>
+        </div>
+      </li>
+
+      <li class="ev">
+        <span class="ev-dot"><svg class="icon"><use href="#i-pine"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">08:15 – 10:30</div>
+          <h3>Green Pine Camp – hồ Đồng Chương<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
+          <p class="desc">Đồi thông bên hồ, trên TikTok hay được gọi là "Đà Lạt thu nhỏ ở Ninh Bình". Buổi sáng có sương trên mặt hồ. Có nông trại cừu và thỏ cho bé xem. Nên đi xe điện quanh khu cho đỡ mệt.</p>
+          <div class="ev-foot">
+            <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>Xe điện 250.000đ/người lớn · đi bộ 150.000đ</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Green+Pine+Camp+h%E1%BB%93+%C4%90%E1%BB%93ng+Ch%C6%B0%C6%A1ng" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-rest">
+        <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">10:30 – 11:50</div>
+          <h3>Về khách sạn, trả phòng</h3>
+          <p class="desc">Khoảng 40 phút đi xe. Thu dọn đồ, trả phòng trước 12:00.</p>
+        </div>
+      </li>
+
+      <li class="ev t-food">
+        <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">12:00 – 13:00 · Ăn trưa</div>
+          <h3>Nhà hàng Năm Dê (CS15)</h3>
+          <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,7 <span>· 1.429 đánh giá Google</span></div>
+          <p class="desc">Trên đường ĐT491, cách Tam Cốc khoảng 3 km (chừng 10 phút), nằm trên đường ra cao tốc. Ăn dê núi, cơm cháy, mua thêm cơm cháy mang về.</p>
+          <div class="ev-foot">
+            <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 21:00</span>
+            <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev t-move">
+        <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">13:00 → ~15:00</div>
+          <h3>Về Hà Nội</h3>
+          <p class="desc">Đi đầu giờ chiều để tránh lúc xe đổ về Hà Nội đông vào chiều tối Chủ Nhật.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ================= ĂN UỐNG ================= -->
+  <section id="an-uong">
+    <div class="sec-head">
+      <div class="eyebrow">Ăn uống</div>
+      <h2>Lịch ăn uống cả chuyến</h2>
+      <p>Mỗi bữa chọn quán gần điểm đang chơi lúc đó, toàn quán từ 4,7 sao với hàng trăm đánh giá trên Google Maps. Bấm vào tên quán để mở chỉ đường.</p>
+    </div>
+    <div class="card table-wrap">
+      <table>
+        <thead>
+          <tr><th>Giờ</th><th>Quán</th><th class="hide-sm">Google</th><th class="r">Mở cửa</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="when num">09:00</span><span class="day-tag">Ngày 1</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Starbucks Tràng An</a><small>Cà phê · khu bến thuyền Tràng An</small></td>
+            <td class="hide-sm">—</td>
+            <td class="r num">7:00 – 18:00</td>
+          </tr>
+          <tr>
+            <td><span class="when num">12:00</span><span class="day-tag">Ngày 1</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+H%C3%A0ng+C%C6%B0%E1%BB%9Dng+D%C3%AA+Tr%C3%A0ng+An" target="_blank" rel="noopener">Nhà hàng Cường Dê</a><small>Trưa · dê núi, cơm cháy · cách Tuyệt Tịnh Cốc ~700 m</small></td>
+            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,8 (1.100)</span></td>
+            <td class="r num">đến 22:00</td>
+          </tr>
+          <tr>
+            <td><span class="when num">16:15</span><span class="day-tag">Ngày 1</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=TAM+C%E1%BB%90C+MOUNTAIN+SIDE+COFFEE" target="_blank" rel="noopener">Tam Cốc Mountain Side Coffee</a><small>Cà phê ngắm hoàng hôn · cách bến Tam Cốc ~1 km</small></td>
+            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,8 (843)</span></td>
+            <td class="r num">đến 19:30</td>
+          </tr>
+          <tr>
+            <td><span class="when num">18:30</span><span class="day-tag">Ngày 1</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=C%C6%A1m+Ni%C3%AAu+Tam+C%E1%BB%91c+CLAYPOT+RICE+RESTAURANT" target="_blank" rel="noopener">Cơm Niêu Tam Cốc – Claypot Rice</a><small>Tối · cơm niêu, món quê · cách bến Tam Cốc ~1,7 km</small></td>
+            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,9 (1.438)</span></td>
+            <td class="r num">từ 10:00</td>
+          </tr>
+          <tr>
+            <td><span class="when num">06:30</span><span class="day-tag">Ngày 2</span></td>
+            <td>Khách sạn<small>Ăn sáng</small></td>
+            <td class="hide-sm">—</td>
+            <td class="r">—</td>
+          </tr>
+          <tr>
+            <td><span class="when num">09:30</span><span class="day-tag">Ngày 2</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=At+Where+cafe+Tam+C%E1%BB%91c" target="_blank" rel="noopener">At Where</a><small>Cà phê · cách bến đò Tam Cốc ~400 m</small></td>
+            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,9 (1.050)</span></td>
+            <td class="r num">từ 9:00</td>
+          </tr>
+          <tr>
+            <td><span class="when num">11:00</span><span class="day-tag">Ngày 2</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+H%C3%A0ng+%C4%90%E1%BB%A9c+D%E1%BA%ABn+Tam+C%E1%BB%91c" target="_blank" rel="noopener">Nhà hàng Đức Dẫn</a><small>Trưa · món Việt · cách bến Tam Cốc ~1,2 km</small></td>
+            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,8 (591)</span></td>
+            <td class="r num">đến 23:00</td>
+          </tr>
+          <tr>
+            <td><span class="when num">18:00</span><span class="day-tag">Ngày 2</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A0ng+M%E1%BB%99c+Lan+n%C3%BAi+K%E1%BB%B3+L%C3%A2n+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Nhà hàng Mộc Lan</a><small>Tối · ngay trong phố cổ Hoa Lư · nên đặt bàn</small></td>
+            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (1.151)</span></td>
+            <td class="r num">đến 22:00</td>
+          </tr>
+          <tr>
+            <td><span class="when num">06:45</span><span class="day-tag">Ngày 3</span></td>
+            <td>Khách sạn<small>Ăn sáng</small></td>
+            <td class="hide-sm">—</td>
+            <td class="r">—</td>
+          </tr>
+          <tr>
+            <td><span class="when num">12:00</span><span class="day-tag">Ngày 3</span></td>
+            <td><a href="https://www.google.com/maps/search/?api=1&query=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener">Nhà hàng Năm Dê (CS15)</a><small>Trưa · dê núi, cơm cháy · cách Tam Cốc ~3 km, trên đường ra cao tốc</small></td>
+            <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (1.429)</span></td>
+            <td class="r num">đến 21:00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fineprint">Điểm đánh giá và giờ mở cửa lấy từ Google Maps ngày 29/10/2026. Giờ cuối tuần có thể khác, nên gọi đặt bàn trước và hỏi giá trước khi gọi món.</p>
+  </section>
+
+  <!-- ================= CHI PHÍ ================= -->
+  <section id="chi-phi">
+    <div class="sec-head">
+      <div class="eyebrow">Giá vé</div>
+      <h2>Tiền vé cả nhà: 2.030.000đ</h2>
+      <p>Tính cho 4 người lớn, đi xe điện ở Green Pine Camp. Nếu đi bộ ở Green Pine thì tổng còn 1.630.000đ. Giá kiểm tra ngày 29/10/2026.</p>
+    </div>
+
+    <div class="card table-wrap">
+      <table>
+        <thead>
+          <tr><th>Hạng mục</th><th class="hide-sm">Cách tính</th><th class="r">Thành tiền</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tuyệt Tịnh Cốc<small class="num">100.000đ/người lớn · trẻ em 30.000đ</small></td>
+            <td class="hide-sm num">100.000 × 4</td>
+            <td class="r num">400.000đ</td>
+          </tr>
+          <tr>
+            <td>Vé tham quan Tam Cốc<small class="num">120.000đ/người lớn · bé miễn phí</small></td>
+            <td class="hide-sm num">120.000 × 4</td>
+            <td class="r num">480.000đ</td>
+          </tr>
+          <tr>
+            <td>Đò Tam Cốc<small class="num">150.000đ/đò · tối đa 4 người lớn</small></td>
+            <td class="hide-sm num">1 đò</td>
+            <td class="r num">150.000đ</td>
+          </tr>
+          <tr>
+            <td>Green Pine Camp, đi xe điện<small class="num">250.000đ/người lớn · trẻ dưới 1m miễn phí</small></td>
+            <td class="hide-sm num">250.000 × 4</td>
+            <td class="r num">1.000.000đ</td>
+          </tr>
+          <tr class="free">
+            <td>Ô Trấn – Starbucks Tràng An, phố cổ Hoa Lư*<small>Không bán vé vào cửa</small></td>
+            <td class="hide-sm">—</td>
+            <td class="r num">0đ</td>
+          </tr>
+          <tr class="total">
+            <td>Tổng tiền vé</td>
+            <td class="hide-sm"></td>
+            <td class="r num">2.030.000đ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="extras">
+      <div class="card extra"><b>Chưa tính trong tổng</b>Tiền ăn uống, tiền xe, phí gửi ô tô ở các điểm, tiền bồi dưỡng lái đò (tùy tâm).</div>
+      <div class="card extra"><b>Vé cho bé</b>Tam Cốc và Green Pine miễn phí cho bé. Tuyệt Tịnh Cốc ghi giá trẻ em 30.000đ, nên hỏi quầy xem bé dưới 2 tuổi có được miễn không.</div>
+      <div class="card extra"><b>Giá Tuyệt Tịnh Cốc</b>100.000đ theo bảng giá Trung tâm Xúc tiến Du lịch Ninh Bình ngày 27/02/2026. Một số trang cũ còn ghi 20.000đ.</div>
+    </div>
+    <p class="fineprint">* Ô Trấn và phố cổ Hoa Lư: chưa thấy bảng giá chính thức. Thông tin miễn phí lấy theo báo và trang du lịch.</p>
+  </section>
+
+  <!-- ================= ĐỒ CHO BÉ ================= -->
+  <section id="cho-be">
+    <div class="sec-head">
+      <div class="eyebrow">Chuẩn bị cho bé</div>
+      <h2>Đồ cần mang</h2>
+      <p>Bấm vào từng món để đánh dấu đã chuẩn bị. Trình duyệt sẽ ghi nhớ các mục đã tích.</p>
+    </div>
+    <div class="card">
+      <div class="check-head">
+        <strong id="check-count" class="num">Đã chuẩn bị 0/10</strong>
+        <div class="progress" aria-hidden="true"><span id="check-bar"></span></div>
+      </div>
+      <ul class="checks" id="checks">
+        <li><label><input type="checkbox" data-k="diu"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Địu em bé</b><span>Lên xuống đò, đi qua hầm Tuyệt Tịnh Cốc dễ hơn xe đẩy</span></span></label></li>
+        <li><label><input type="checkbox" data-k="phao"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Áo phao trẻ em</b><span>Bến đò ít khi có áo phao cỡ cho bé</span></span></label></li>
+        <li><label><input type="checkbox" data-k="mu"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Mũ rộng vành, ô che</b><span>Đò Tam Cốc không có mái che</span></span></label></li>
+        <li><label><input type="checkbox" data-k="ao"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Áo khoác, tất, mũ len</b><span>Sáng sớm khoảng 19°C, lạnh hơn nếu có gió mùa</span></span></label></li>
+        <li><label><input type="checkbox" data-k="muoi"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Kem chống muỗi cho bé</b><span>Ven hồ, ven sông có muỗi lúc chiều tối</span></span></label></li>
+        <li><label><input type="checkbox" data-k="bim"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Bỉm, khăn ướt, khăn sữa</b><span>Đủ 3 ngày, thêm phần dự phòng</span></span></label></li>
+        <li><label><input type="checkbox" data-k="sua"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Sữa, bình giữ nhiệt nước ấm</b><span>Pha sữa trên xe và trên đò</span></span></label></li>
+        <li><label><input type="checkbox" data-k="thuoc"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Thuốc thường dùng, nhiệt kế</b><span>Theo đơn bác sĩ của bé</span></span></label></li>
+        <li><label><input type="checkbox" data-k="ghe"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Ghế ô tô cho bé</b><span>Hỏi trước nhà xe hoặc tự mang theo</span></span></label></li>
+        <li><label><input type="checkbox" data-k="cui"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Báo khách sạn kê cũi</b><span>Gọi xác nhận trước ngày 13/11</span></span></label></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= LƯU Ý ================= -->
+  <section id="luu-y">
+    <div class="sec-head">
+      <div class="eyebrow">Lưu ý</div>
+      <h2>Mẹo nhỏ để chuyến đi suôn sẻ</h2>
+    </div>
+    <div class="notes">
+      <div class="card note">
+        <div class="ov-icon"><svg class="icon"><use href="#i-clock"/></svg></div>
+        <div><h3>Đi sớm vào cuối tuần</h3><p>Thứ Bảy và Chủ Nhật, các điểm đông từ khoảng 9 giờ. Vì vậy đò Tam Cốc và Green Pine đều xếp vào sáng sớm.</p></div>
+      </div>
+      <div class="card note">
+        <div class="ov-icon"><svg class="icon"><use href="#i-phone"/></svg></div>
+        <div><h3>Đặt bàn trước</h3><p>Nhất là bữa tối thứ Bảy ở phố cổ. Xin thêm 1 ghế em bé và hỏi giá các món dê trước khi gọi.</p></div>
+      </div>
+      <div class="card note">
+        <div class="ov-icon"><svg class="icon"><use href="#i-umbrella"/></svg></div>
+        <div><h3>Nếu trời mưa</h3><p>Mưa nhỏ vẫn đi đò được: người lớn mặc áo mưa, che kín cho bé. Mưa to thì ngồi cà phê lâu hơn và rút ngắn buổi ở ngoài trời.</p></div>
+      </div>
+      <div class="card note">
+        <div class="ov-icon"><svg class="icon"><use href="#i-info"/></svg></div>
+        <div><h3>Xem lại thời tiết ngày 10–11/11</h3><p>Nếu có gió mùa đông bắc thì mang thêm áo ấm cho bé, nhất là buổi sáng ở hồ Đồng Chương.</p></div>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:40px">
+      <div class="eyebrow">Nguồn tham khảo</div>
+    </div>
+    <ul class="sources">
+      <li><a href="https://www.tiktok.com/discover/review-du-l%E1%BB%8Bch-t%E1%BA%A1i-ninh-b%C3%ACnh" target="_blank" rel="noopener">TikTok: Review du lịch tại Ninh Bình</a></li>
+      <li><a href="https://travel.com.vn/tin-tuc-du-lich/tuyet-tinh-coc-ninh-binh-v18488.aspx" target="_blank" rel="noopener">Travel.com.vn: Tuyệt Tịnh Cốc, giá vé theo bảng giá 27/02/2026</a></li>
+      <li><a href="https://dulichvietnam.com.vn/diem-check-in-moi-o-ninh-binh-dip-tet.html" target="_blank" rel="noopener">Dulichvietnam: "Ô Trấn Ninh Bình" đối diện Starbucks</a> (04/02/2026)</li>
+      <li><a href="https://znews.vn/starbucks-mo-cua-hang-thu-2-tai-ben-thuyen-trang-an-post1650151.html" target="_blank" rel="noopener">Znews: Starbucks mở cửa hàng thứ 2 tại bến thuyền Tràng An</a> (09/05/2026)</li>
+      <li><a href="https://trangangolfandresort.com/review-green-pine-camp-ninh-binh/" target="_blank" rel="noopener">Review Green Pine Camp: giá vé đi bộ và xe điện</a> (04/06/2026)</li>
+      <li><a href="https://vnexpress.net/tam-coc-mua-lua-chin-4473165.html" target="_blank" rel="noopener">VnExpress: Tam Cốc, giá vé và đò</a></li>
+      <li><a href="https://mia.vn/cam-nang-du-lich/ben-thuyen-tam-coc-20892" target="_blank" rel="noopener">Mia.vn: Bến thuyền Tam Cốc, giờ mở cửa</a></li>
+      <li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google Maps: điểm đánh giá và giờ mở cửa các quán</a> (29/10/2026)</li>
+      <li><a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo: dữ liệu thời tiết 2010–2025 và dự báo</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">Lịch trình Ninh Bình 13–15/11/2026 · Cập nhật 29/10/2026</div>
+</footer>
+
+<script>
+(function () {
+  // Checklist, remembered per viewer
+  var KEY = "nb-checklist-2026";
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) { saved = {}; }
+  var boxes = Array.prototype.slice.call(document.querySelectorAll("#checks input"));
+  var countEl = document.getElementById("check-count");
+  var barEl = document.getElementById("check-bar");
+  function render() {
+    var done = boxes.filter(function (b) { return b.checked; }).length;
+    countEl.textContent = "Đã chuẩn bị " + done + "/" + boxes.length;
+    barEl.style.width = (done / boxes.length * 100) + "%";
+  }
+  boxes.forEach(function (b) {
+    b.checked = !!saved[b.dataset.k];
+    b.addEventListener("change", function () {
+      saved[b.dataset.k] = b.checked;
+      try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {}
+      render();
+    });
+  });
+  render();
+
+  // Highlight today's day during the trip
+  var now = new Date();
+  var today = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+  var todayEl = document.querySelector('.day[data-date="' + today + '"]');
+  if (todayEl) todayEl.classList.add("is-today");
+
+  // Active nav link
+  var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
+  if ("IntersectionObserver" in window) {
+    var map = {};
+    links.forEach(function (a) { map[a.getAttribute("href").slice(1)] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        links.forEach(function (a) { a.classList.remove("active"); });
+        var a = map[en.target.id];
+        if (a) {
+          a.classList.add("active");
+          a.closest("ul").scrollTo({ left: a.offsetLeft - 16, behavior: "smooth" });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    Object.keys(map).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
