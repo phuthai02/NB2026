@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
+<meta name="theme-color" content="#def5ec">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Lịch trình Ninh Bình</title>
 <meta name="description" content="Lịch trình Hà Nội – Ninh Bình 13–15/11/2026 cho 4 người lớn và 1 bé dưới 2 tuổi: điểm hot TikTok, quán ăn cụ thể, thời tiết từng ngày và giá vé.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -210,7 +213,19 @@
   .day-aside .keys b { color: var(--ink); font-weight: 600; }
   @media (max-width: 959px) { .day-aside .keys { display: none; } }
 
+  .day-main { min-width: 0; }
   .tl { list-style: none; margin: 0; padding: 0; }
+  .planb {
+    margin: 4px 0 0 44px; padding: 16px 18px; border-radius: 16px;
+    background: var(--sky-soft); border: 1px dashed rgba(44, 127, 196, .45);
+  }
+  .planb h3 { display: flex; align-items: center; gap: 8px; font-size: 16px; font-weight: 700; color: var(--sky); }
+  .planb h3 .icon { font-size: 18px; }
+  .planb ul { margin: 10px 0 0; padding-left: 18px; font-size: 14px; color: var(--ink-2); }
+  .planb li + li { margin-top: 8px; }
+  .planb b { color: var(--ink); }
+  .planb a { font-weight: 600; }
+  @media (max-width: 480px) { .planb { margin-left: 0; } }
   .ev { position: relative; padding: 0 0 16px 44px; --c: var(--accent); --c-soft: var(--accent-soft); }
   .ev::before { content: ""; position: absolute; left: 15px; top: 34px; bottom: 0; width: 2px; background: var(--line); }
   .ev:last-child::before { display: none; }
@@ -368,6 +383,7 @@
     <symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h13l-3-3M20 16H7l3 3"/></symbol>
     <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
   </defs>
 </svg>
@@ -462,7 +478,7 @@
         <div>
           <h3>Thứ Bảy 14/11 · Chưa chốt</h3>
           <p><b>Gợi ý: ở lại Rêu thêm 1 đêm.</b> Không phải dọn đồ giữa chừng khi có bé, buổi trưa về ngủ luôn, tối từ phố cổ về chỉ mất 10 phút.</p>
-          <p>Nếu đổi chỗ: chọn nơi gần phố cổ Hoa Lư hoặc Tam Cốc. Sáng thứ Bảy xếp hành lý lên xe trước khi đi đò, trả phòng Rêu, rồi nhận phòng mới lúc 14:00.</p>
+          <p>Nếu đổi chỗ: chọn nơi gần phố cổ Hoa Lư hoặc Tam Cốc. Trả phòng Rêu trước 12:00 thứ Bảy, nhận phòng mới lúc 14:00 rồi chiều đi đò.</p>
         </div>
       </div>
     </div>
@@ -485,7 +501,7 @@
         <div class="wx-temp num">19° – 26°<small>C</small></div>
         <div><span class="rain wet"><svg class="icon"><use href="#i-umbrella"/></svg>Có thể mưa nhỏ</span></div>
         <dl>
-          <dt>Sáng sớm</dt><dd class="num">19–21°C</dd>
+          <dt>Lúc xuất phát (9h)</dt><dd class="num">21–22°C</dd>
           <dt>Buổi trưa</dt><dd class="num">25–26°C</dd>
           <dt>Chiều ở Tuyệt Tịnh Cốc</dt><dd class="num">23–25°C</dd>
           <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
@@ -501,12 +517,12 @@
         <div class="wx-temp num">19° – 26°<small>C</small></div>
         <div><span class="rain dry"><svg class="icon"><use href="#i-sun"/></svg>Không mưa</span></div>
         <dl>
-          <dt>Lúc đi đò (7–9h)</dt><dd class="num">19–22°C</dd>
+          <dt>Lúc đi đò (15–17h)</dt><dd class="num">24–25°C</dd>
           <dt>Buổi trưa</dt><dd class="num">25–26°C</dd>
           <dt>Tối ở phố cổ</dt><dd class="num">20–22°C</dd>
           <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
         </dl>
-        <p class="wear"><strong>Mặc gì:</strong> sáng sớm trên đò có gió, bé cần áo khoác và mũ. Đò không có mái che.</p>
+        <p class="wear"><strong>Mặc gì:</strong> chiều trên đò có gió nhẹ, mang áo khoác mỏng và mũ cho bé. Đò không có mái che.</p>
       </article>
 
       <article class="card wx">
@@ -517,12 +533,12 @@
         <div class="wx-temp num">20° – 27°<small>C</small></div>
         <div><span class="rain dry"><svg class="icon"><use href="#i-sun"/></svg>Không mưa</span></div>
         <dl>
-          <dt>Sáng ở hồ Đồng Chương</dt><dd class="num">20–22°C</dd>
+          <dt>Ở Green Pine (10–12h)</dt><dd class="num">24–26°C</dd>
           <dt>Buổi trưa</dt><dd class="num">26–27°C</dd>
           <dt>Lúc về Hà Nội</dt><dd class="num">25–26°C</dd>
           <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
         </dl>
-        <p class="wear"><strong>Mặc gì:</strong> sáng ở đồi thông bên hồ mát, mặc thêm áo khoác cho bé. Để một bộ đồ dự phòng cho bé trên xe về.</p>
+        <p class="wear"><strong>Mặc gì:</strong> đồi thông bên hồ có gió, mang áo khoác mỏng cho bé. Để một bộ đồ dự phòng cho bé trên xe về.</p>
       </article>
     </div>
 
@@ -541,26 +557,27 @@
     <aside class="day-aside">
       <div class="day-num"><span class="eyebrow">Ngày 1</span><span class="today">Hôm nay</span></div>
       <h2>Thứ Sáu 13/11</h2>
-      <p class="theme">Sáng ở Starbucks Tràng An, trưa nghỉ ở Rêu, chiều mát dạo Tuyệt Tịnh Cốc rồi ăn dê ngay gần đó.</p>
+      <p class="theme">Xuất phát 9:00. Trưa ghé Starbucks Tràng An, chiều mát dạo Tuyệt Tịnh Cốc rồi ăn dê ngay gần đó.</p>
       <div class="pills">
         <span class="pill wx-pill wet"><svg class="icon"><use href="#i-umbrella"/></svg>19–26°C · có thể mưa nhỏ</span>
         <span class="pill"><svg class="icon"><use href="#i-car"/></svg>~2 giờ đường</span>
       </div>
       <ul class="keys">
-        <li><b>Vì sao đi Ô Trấn buổi sáng?</b></li>
-        <li>Khu này cuối tuần rất đông, phải xếp hàng chụp ảnh. Sáng thứ Sáu khoảng 9 giờ là lúc vắng và đẹp nhất.</li>
         <li><b>Vì sao Tuyệt Tịnh Cốc buổi chiều?</b></li>
         <li>Chiều nắng dịu, thung lũng khuất bóng núi nên mát. Bé đã ngủ trưa xong nên cả nhà thong thả dạo được lâu hơn.</li>
+        <li><b>Ô Trấn vào thứ Sáu</b></li>
+        <li>Cuối tuần khu này rất đông, phải xếp hàng chụp ảnh. Ngày thường vắng hơn hẳn.</li>
       </ul>
     </aside>
 
+    <div class="day-main">
     <ol class="tl">
       <li class="ev t-move">
         <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">07:00</div>
+          <div class="ev-time num">09:00</div>
           <h3>Xuất phát từ Hà Nội</h3>
-          <p class="desc">Tự lái theo cao tốc Pháp Vân – Cầu Giẽ – Ninh Bình, khoảng 2 giờ. Đặt Google Maps dẫn thẳng tới Starbucks Tràng An, đi sớm để tới lúc 9 giờ. Ăn sáng trên đường hoặc ở trạm dừng nghỉ.</p>
+          <p class="desc">Ăn sáng ở nhà rồi đi. Tự lái theo cao tốc Pháp Vân – Cầu Giẽ – Ninh Bình, khoảng 2 giờ, tới Starbucks Tràng An khoảng 11:00. Ghé trạm dừng nghỉ thay bỉm cho bé nếu cần.</p>
           <div class="ev-foot">
             <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>Phí cao tốc ~150.000đ</span>
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
@@ -571,13 +588,13 @@
       <li class="ev">
         <span class="ev-dot"><svg class="icon"><use href="#i-camera"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">09:00 – 10:30</div>
+          <div class="ev-time num">11:00 – 12:00</div>
           <h3>Starbucks Tràng An và "Ô Trấn Ninh Bình"<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
           <p class="desc">Dãy nhà mái ngói, xà gỗ kiểu phố cổ nằm sát mép sông, đối diện Starbucks, ngay khu bến thuyền Tràng An. Trên mạng hay gọi là "Ô Trấn Ninh Bình". Ngồi uống cà phê và chụp ảnh, không cần mua vé đò Tràng An.</p>
           <ul class="pts">
             <li>Đỗ ô tô ở bãi xe khu bến thuyền, đi bộ vài bước là tới</li>
             <li>Starbucks mở cửa 7:00 – 18:00. Latte khoảng 75.000–99.000đ, Frappuccino khoảng 80.000–124.000đ tùy size</li>
-            <li>Khu sát mép sông: bế bé đứng phía trong lan can</li>
+            <li>Khu sát mép sông: để bé ở phía trong lan can</li>
           </ul>
           <div class="ev-foot">
             <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>Vào cửa miễn phí</span>
@@ -590,10 +607,10 @@
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">11:00 – 12:15 · Ăn trưa</div>
+          <div class="ev-time num">12:20 – 13:30 · Ăn trưa</div>
           <h3>Cơm Niêu Tam Cốc – Claypot Rice</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,9 <span>· 1.438 đánh giá Google</span></div>
-          <p class="desc">Từ Starbucks đi xe khoảng 20 phút, nằm trên đường về Rêu (cách Rêu khoảng 2,5 km). Cơm niêu và món quê, ăn trưa sớm cho bé kịp giờ ngủ.</p>
+          <p class="desc">Từ Starbucks đi xe khoảng 20 phút, nằm trên đường về Rêu (cách Rêu khoảng 2,5 km). Cơm niêu và món quê.</p>
           <div class="ev-foot">
             <span class="price">~150.000–200.000đ/người</span>
             <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở từ 10:00</span>
@@ -605,7 +622,7 @@
       <li class="ev t-rest">
         <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">12:30 – 15:20</div>
+          <div class="ev-time num">13:40 – 15:20</div>
           <h3>Về Rêu Coffee &amp; Stay nhận phòng, bé ngủ trưa</h3>
           <p class="desc">Khoảng 7 phút đi xe. Giờ nhận phòng 14:00: gọi trước xin nhận sớm, nếu chưa có phòng thì ngồi quán cà phê tầng dưới của Rêu chờ.</p>
           <div class="ev-foot">
@@ -653,13 +670,23 @@
         <div class="card ev-card">
           <div class="ev-time num">19:00</div>
           <h3>Về Rêu nghỉ</h3>
-          <p class="desc">Khoảng 20 phút đi xe. Ngủ sớm để sáng mai ra bến đò lúc 7:00.</p>
+          <p class="desc">Khoảng 20 phút đi xe. Mai dậy 8:00, không cần vội.</p>
           <div class="ev-foot">
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
           </div>
         </div>
       </li>
     </ol>
+
+    <div class="planb">
+      <h3><svg class="icon"><use href="#i-swap"/></svg>Phương án thay thế ngày 1</h3>
+      <ul>
+        <li><b>Kẹt xe, tới sau 12:00:</b> ăn trưa ở Cơm Niêu trước rồi về Rêu. Ghé Starbucks và Ô Trấn lúc 15:00 trên đường đi Tuyệt Tịnh Cốc (cách nhau 10 phút, Starbucks mở đến 18:00).</li>
+        <li><b>Mưa to buổi chiều:</b> hoãn Tuyệt Tịnh Cốc sang sáng Chủ Nhật, đi thay Green Pine. Chiều ngồi Starbucks Tràng An (cửa kính lớn nhìn ra sông) hoặc quán cà phê tầng dưới của Rêu.</li>
+        <li><b>Cường Dê kín bàn:</b> <a href="https://www.google.com/maps/dir/?api=1&destination=HOA+L%C6%AF+QU%C3%81N+Th%E1%BB%8Bt+D%C3%AA+C%C6%A1m+Ch%C3%A1y" target="_blank" rel="noopener">Hoa Lư Quán – Thịt Dê Cơm Cháy</a> (4,7★, 558 đánh giá, mở đến 22:00), nằm trên đường từ Tuyệt Tịnh Cốc về Rêu.</li>
+      </ul>
+    </div>
+    </div>
   </section>
 
   <!-- ================= NGÀY 2 ================= -->
@@ -667,24 +694,25 @@
     <aside class="day-aside">
       <div class="day-num"><span class="eyebrow">Ngày 2</span><span class="today">Hôm nay</span></div>
       <h2>Thứ Bảy 14/11</h2>
-      <p class="theme">Sáng sớm đi đò Tam Cốc, cà phê, tối dạo phố cổ Hoa Lư lên đèn.</p>
+      <p class="theme">Ngủ dậy thong thả, cà phê ở Tam Cốc, chiều đi đò khi nắng dịu, tối dạo phố cổ Hoa Lư lên đèn.</p>
       <div class="pills">
         <span class="pill wx-pill"><svg class="icon"><use href="#i-sun"/></svg>19–26°C · không mưa</span>
         <span class="pill"><svg class="icon"><use href="#i-boat"/></svg>Đò ~2 giờ</span>
       </div>
       <ul class="keys">
-        <li><b>Vì sao đi đò lúc 7 giờ?</b></li>
-        <li>Thứ Bảy, từ khoảng 9 giờ bến Tam Cốc rất đông. Đi sớm thì trời mát, nước lặng, ảnh đẹp, và về kịp giờ ngủ trưa của bé.</li>
+        <li><b>Vì sao đi đò buổi chiều?</b></li>
+        <li>Dậy 8:00 thì ra bến đúng lúc sáng thứ Bảy đông nhất. Chiều nắng dịu, mát, bé đã ngủ trưa xong. Quầy vé ngừng bán khoảng 17:00, nên có mặt trước 15:15.</li>
       </ul>
     </aside>
 
+    <div class="day-main">
     <ol class="tl">
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">06:30 · Ăn sáng</div>
-          <h3>Ăn sáng nhẹ ở Rêu</h3>
-          <p class="desc">Hỏi trước chủ nhà có phục vụ bữa sáng không. Nếu không, chuẩn bị bánh mì và sữa từ tối hôm trước. 7:00 lái xe ra bến Tam Cốc, khoảng 10 phút.</p>
+          <div class="ev-time num">08:00 dậy · 08:30 ăn sáng</div>
+          <h3>Ăn sáng ở Rêu</h3>
+          <p class="desc">Hỏi trước chủ nhà có phục vụ bữa sáng không. Nếu không, mua bánh mì, sữa từ tối hôm trước.</p>
           <div class="ev-foot">
             <span class="price">~40.000–60.000đ/người</span>
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
@@ -692,31 +720,13 @@
         </div>
       </li>
 
-      <li class="ev">
-        <span class="ev-dot"><svg class="icon"><use href="#i-boat"/></svg></span>
-        <div class="card ev-card">
-          <div class="ev-time num">07:15 – 09:30</div>
-          <h3>Đi đò Tam Cốc<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
-          <p class="desc">Thuyền nan chèo tay trên sông Ngô Đồng, đi qua 3 hang: hang Cả, hang Hai, hang Ba. Cả đi lẫn về khoảng 1,5–2 giờ. Có mặt ở bến lúc 7:15 để lên đò sớm, trước khi đông.</p>
-          <ul class="pts">
-            <li>Mỗi đò tối đa 4 khách: cả nhà đi vừa 1 đò, bé ngồi lòng bố mẹ</li>
-            <li>Đò không có mái che: mang mũ, ô và áo phao cỡ trẻ em</li>
-            <li>Khách thường gửi lái đò tiền bồi dưỡng, tùy tâm</li>
-          </ul>
-          <div class="ev-foot">
-            <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>250.000đ/người lớn, đã gồm đò · trẻ dưới 1m miễn phí</span>
-            <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=B%E1%BA%BFn+thuy%E1%BB%81n+Tam+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
-          </div>
-        </div>
-      </li>
-
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-coffee"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">09:45 – 10:45 · Cà phê</div>
-          <h3>At Where</h3>
+          <div class="ev-time num">09:30 – 11:00 · Cà phê</div>
+          <h3>At Where và dạo phố Tam Cốc</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,9 <span>· 1.050 đánh giá Google</span></div>
-          <p class="desc">Cách bến đò Tam Cốc khoảng 400 m, đi bộ được. Ngồi nghỉ, cho bé ăn nhẹ sau chuyến đò.</p>
+          <p class="desc">Từ Rêu đi xe khoảng 10 phút, quán cách bến đò Tam Cốc khoảng 400 m. Uống cà phê rồi đẩy xe cho bé dạo một vòng phố nhỏ ven hồ Tam Cốc.</p>
           <div class="ev-foot">
             <span class="price">~40.000–70.000đ/người</span>
             <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở từ 9:00</span>
@@ -728,7 +738,7 @@
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">11:00 – 12:15 · Ăn trưa</div>
+          <div class="ev-time num">11:15 – 12:30 · Ăn trưa</div>
           <h3>Nhà hàng Đức Dẫn</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,8 <span>· 591 đánh giá Google</span></div>
           <p class="desc">Cách bến Tam Cốc khoảng 1,2 km. Món Việt và đặc sản Ninh Bình.</p>
@@ -743,9 +753,9 @@
       <li class="ev t-rest">
         <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">12:30 – 15:45</div>
+          <div class="ev-time num">12:45 – 14:45</div>
           <h3>Về chỗ ở nghỉ trưa</h3>
-          <p class="desc">Nếu ở lại Rêu thì về nghỉ luôn, khoảng 10 phút. Nếu đổi chỗ ở thì nhận phòng mới (thường 14:00), nên xin nhận sớm. Bé ngủ trưa, người lớn nghỉ ngơi để tối đi phố cổ.</p>
+          <p class="desc">Nếu ở lại Rêu thì về nghỉ luôn, khoảng 10 phút. Nếu đổi chỗ ở thì trả phòng Rêu trước 12:00 và nhận phòng mới lúc 14:00. Bé ngủ trưa, người lớn nghỉ ngơi.</p>
           <div class="ev-foot">
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường về Rêu</a>
           </div>
@@ -753,12 +763,30 @@
       </li>
 
       <li class="ev">
+        <span class="ev-dot"><svg class="icon"><use href="#i-boat"/></svg></span>
+        <div class="card ev-card">
+          <div class="ev-time num">15:00 – 17:00</div>
+          <h3>Đi đò Tam Cốc buổi chiều<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
+          <p class="desc">Thuyền nan chèo tay trên sông Ngô Đồng, đi qua 3 hang: hang Cả, hang Hai, hang Ba. Cả đi lẫn về khoảng 1,5–2 giờ. Có mặt ở bến lúc 15:00 vì quầy vé ngừng bán khoảng 17:00. Lúc về, nắng chiều xiên qua núi rất đẹp.</p>
+          <ul class="pts">
+            <li>Mỗi đò tối đa 4 khách: cả nhà đi vừa 1 đò, bé ngồi lòng bố mẹ</li>
+            <li>Đò không có mái che: mang mũ, ô và áo phao cỡ trẻ em</li>
+            <li>Khách thường gửi lái đò tiền bồi dưỡng, tùy tâm</li>
+          </ul>
+          <div class="ev-foot">
+            <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>250.000đ/người lớn, đã gồm đò · trẻ dưới 1m miễn phí</span>
+            <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=B%E1%BA%BFn+thuy%E1%BB%81n+Tam+C%E1%BB%91c+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="ev">
         <span class="ev-dot"><svg class="icon"><use href="#i-lantern"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">16:15 – 20:00</div>
+          <div class="ev-time num">17:30 – 20:00</div>
           <h3>Phố cổ Hoa Lư<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,6 <span>· hơn 10.000 đánh giá Google</span></div>
-          <p class="desc">Phố đèn lồng quanh hồ và núi Kỳ Lân ở trung tâm Ninh Bình, cách Rêu khoảng 10 phút đi xe. Đến trước hoàng hôn để chụp ảnh lúc trời còn sáng, rồi ở lại xem phố lên đèn. Buổi tối có hát chèo và trò chơi dân gian.</p>
+          <p class="desc">Phố đèn lồng quanh hồ và núi Kỳ Lân ở trung tâm Ninh Bình, từ bến Tam Cốc đi xe khoảng 20 phút. Tới đúng lúc phố bắt đầu lên đèn. Buổi tối có hát chèo và trò chơi dân gian.</p>
           <ul class="pts">
             <li>Mở cửa đến 23:00, tham quan miễn phí</li>
             <li>Tùy chọn: thuyền thả đèn hoa đăng trên hồ Kỳ Lân, 100.000đ/người lớn</li>
@@ -774,7 +802,7 @@
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">18:00 – 19:15 · Ăn tối</div>
+          <div class="ev-time num">18:15 – 19:30 · Ăn tối</div>
           <h3>Nhà hàng Mộc Lan</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,7 <span>· 1.151 đánh giá Google</span></div>
           <p class="desc">Ngay dưới núi Kỳ Lân, trong phố cổ. Tối thứ Bảy đông: gọi đặt bàn trước cho 4 người và xin 1 ghế em bé.</p>
@@ -791,13 +819,25 @@
         <div class="card ev-card">
           <div class="ev-time num">20:00</div>
           <h3>Về chỗ ở</h3>
-          <p class="desc">Về Rêu khoảng 10 phút. Về sớm để mai đi Green Pine Camp từ sáng.</p>
+          <p class="desc">Về Rêu khoảng 10 phút.</p>
           <div class="ev-foot">
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường về Rêu</a>
           </div>
         </div>
       </li>
     </ol>
+
+    <div class="planb">
+      <h3><svg class="icon"><use href="#i-swap"/></svg>Phương án thay thế ngày 2</h3>
+      <ul>
+        <li><b>Mưa to buổi chiều:</b> chuyển đò Tam Cốc sang sáng Chủ Nhật, đi thay Green Pine (bến cách Rêu 10 phút). Chiều ngồi cà phê hoặc nghỉ ở Rêu.</li>
+        <li><b>Bến đò đông, phải chờ lâu:</b> ngồi <a href="https://www.google.com/maps/dir/?api=1&destination=Dam+Khe+Specialty+Coffee+Tam+Coc" target="_blank" rel="noopener">Dam Khe Specialty Coffee</a> (4,9★, cách bến ~150 m, mở đến 19:00) chờ tới lượt. Quán này cũng thay được At Where nếu At Where đông.</li>
+        <li><b>Đức Dẫn kín bàn:</b> <a href="https://www.google.com/maps/dir/?api=1&destination=Tam+Coc+Mountain+view+Restaurant+BBQ+Hot+Pot" target="_blank" rel="noopener">Tam Coc Mountain View Restaurant</a> (4,7★, 412 đánh giá, cách bến ~1 km, mở đến 22:00).</li>
+        <li><b>Mộc Lan hết bàn:</b> <a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+H%C3%A0ng+C%C6%A1m+Ni%C3%AAu+Vi%E1%BB%87t+X%C6%B0a+80+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Cơm Niêu Việt Xưa</a> (80 Tràng An, 4,8★, hơn 4.400 đánh giá) hoặc <a href="https://www.google.com/maps/dir/?api=1&destination=C%E1%BB%9D+Lau+Ninh+B%C3%ACnh+01+Tr%C3%A0ng+An" target="_blank" rel="noopener">Cờ Lau Ninh Bình</a> (01 Tràng An, 4,8★, mở đến 22:30), đều cách Mộc Lan khoảng 500 m.</li>
+        <li><b>Mưa buổi tối:</b> ăn tối trong nhà hàng ở phố cổ rồi về sớm, bỏ thả đèn hoa đăng.</li>
+      </ul>
+    </div>
+    </div>
   </section>
 
   <!-- ================= NGÀY 3 ================= -->
@@ -805,22 +845,23 @@
     <aside class="day-aside">
       <div class="day-num"><span class="eyebrow">Ngày 3</span><span class="today">Hôm nay</span></div>
       <h2>Chủ Nhật 15/11</h2>
-      <p class="theme">Đồi thông và hồ Đồng Chương ("Đà Lạt thu nhỏ"), trả phòng, ăn trưa rồi về Hà Nội.</p>
+      <p class="theme">Dậy 8:00, trả phòng rồi đi Green Pine Camp ("Đà Lạt thu nhỏ"), ăn trưa trên đường về Hà Nội.</p>
       <div class="pills">
         <span class="pill wx-pill"><svg class="icon"><use href="#i-sun"/></svg>20–27°C · không mưa</span>
-        <span class="pill"><svg class="icon"><use href="#i-clock"/></svg>Trả phòng 12:00</span>
+        <span class="pill"><svg class="icon"><use href="#i-clock"/></svg>Trả phòng trước khi đi</span>
       </div>
       <ul class="keys">
-        <li><b>Vì sao đi Green Pine Camp sớm?</b></li>
-        <li>Buổi sáng có sương trên mặt hồ, đây là cảnh đẹp nhất. Đi sớm cũng kịp quay về trả phòng trước 12:00.</li>
+        <li><b>Vì sao trả phòng trước khi đi?</b></li>
+        <li>Green Pine cách Rêu khoảng 45 phút. Trả phòng trước thì không phải quay lại, chơi xong ra ăn trưa rồi về Hà Nội luôn.</li>
       </ul>
     </aside>
 
+    <div class="day-main">
     <ol class="tl">
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">06:45 · Ăn sáng</div>
+          <div class="ev-time num">08:00 dậy · 08:30 ăn sáng</div>
           <h3>Ăn sáng ở chỗ ở</h3>
           <p class="desc">Nếu ở lại Rêu thì ăn sáng ở Rêu, hỏi chủ nhà trước.</p>
           <div class="ev-foot">
@@ -833,9 +874,9 @@
       <li class="ev t-move">
         <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">07:30</div>
-          <h3>Đi Green Pine Camp</h3>
-          <p class="desc">Từ Rêu đi xe khoảng 45 phút lên Nho Quan. Hành lý để lại chỗ ở.</p>
+          <div class="ev-time num">09:15</div>
+          <h3>Trả phòng, đi Green Pine Camp</h3>
+          <p class="desc">Xếp hành lý lên xe, trả phòng rồi đi luôn. Từ Rêu đi xe khoảng 45 phút lên Nho Quan.</p>
           <div class="ev-foot">
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Green+Pine+Camp+h%E1%BB%93+%C4%90%E1%BB%93ng+Ch%C6%B0%C6%A1ng" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
           </div>
@@ -845,9 +886,9 @@
       <li class="ev">
         <span class="ev-dot"><svg class="icon"><use href="#i-pine"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">08:15 – 10:30</div>
+          <div class="ev-time num">10:00 – 12:00</div>
           <h3>Green Pine Camp – hồ Đồng Chương<span class="tag tag-hot"><svg class="icon"><use href="#i-fire"/></svg>Hot TikTok</span></h3>
-          <p class="desc">Đồi thông bên hồ, trên TikTok hay được gọi là "Đà Lạt thu nhỏ ở Ninh Bình". Buổi sáng có sương trên mặt hồ. Có nông trại cừu và thỏ cho bé xem. Nên đi xe điện quanh khu cho đỡ mệt.</p>
+          <p class="desc">Đồi thông bên hồ, trên TikTok hay được gọi là "Đà Lạt thu nhỏ ở Ninh Bình". Có nông trại cừu và thỏ cho bé xem. Đi xe điện quanh khu cho đỡ mệt, vé dùng tối đa 4 giờ.</p>
           <div class="ev-foot">
             <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>250.000đ/người lớn, gồm xe điện 4 giờ · trẻ dưới 1m miễn phí</span>
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=Green+Pine+Camp+h%E1%BB%93+%C4%90%E1%BB%93ng+Ch%C6%B0%C6%A1ng" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
@@ -855,25 +896,13 @@
         </div>
       </li>
 
-      <li class="ev t-rest">
-        <span class="ev-dot"><svg class="icon"><use href="#i-bed"/></svg></span>
-        <div class="card ev-card">
-          <div class="ev-time num">10:30 – 11:50</div>
-          <h3>Về chỗ ở, trả phòng</h3>
-          <p class="desc">Khoảng 45 phút đi xe. Thu dọn đồ, trả phòng trước 12:00.</p>
-          <div class="ev-foot">
-            <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường về Rêu</a>
-          </div>
-        </div>
-      </li>
-
       <li class="ev t-food">
         <span class="ev-dot"><svg class="icon"><use href="#i-food"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">12:00 – 13:00 · Ăn trưa</div>
+          <div class="ev-time num">12:45 – 13:45 · Ăn trưa</div>
           <h3>Nhà hàng Năm Dê (CS15)</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>4,7 <span>· 1.429 đánh giá Google</span></div>
-          <p class="desc">Trên đường ĐT491, cách Rêu khoảng 1,5 km, nằm trên đường ra cao tốc. Ăn dê núi, cơm cháy, mua thêm cơm cháy mang về.</p>
+          <p class="desc">Từ Green Pine đi xe khoảng 45 phút, nằm trên đường ĐT491 ra cao tốc. Ăn dê núi, cơm cháy, mua thêm cơm cháy mang về.</p>
           <div class="ev-foot">
             <span class="price">~200.000–250.000đ/người</span>
             <span class="mini"><svg class="icon"><use href="#i-clock"/></svg>Mở đến 21:00</span>
@@ -885,9 +914,9 @@
       <li class="ev t-move">
         <span class="ev-dot"><svg class="icon"><use href="#i-car"/></svg></span>
         <div class="card ev-card">
-          <div class="ev-time num">13:00 → ~15:00</div>
+          <div class="ev-time num">13:45 → ~15:45</div>
           <h3>Về Hà Nội</h3>
-          <p class="desc">Đi đầu giờ chiều để tránh lúc xe đổ về Hà Nội đông vào chiều tối Chủ Nhật.</p>
+          <p class="desc">Về tới nhà trước giờ xe đổ về Hà Nội đông vào chiều tối Chủ Nhật. Bé thường ngủ trên xe.</p>
           <div class="ev-foot">
             <span class="price"><svg class="icon"><use href="#i-ticket"/></svg>Phí cao tốc ~150.000đ</span>
             <a class="maplink" href="https://www.google.com/maps/dir/?api=1&destination=H%C3%A0+N%E1%BB%99i" target="_blank" rel="noopener"><svg class="icon"><use href="#i-pin"/></svg>Chỉ đường</a>
@@ -895,6 +924,17 @@
         </div>
       </li>
     </ol>
+
+    <div class="planb">
+      <h3><svg class="icon"><use href="#i-swap"/></svg>Phương án thay thế ngày 3</h3>
+      <ul>
+        <li><b>Đi bù điểm bị hoãn:</b> nếu Tuyệt Tịnh Cốc hoặc đò Tam Cốc bị hoãn vì mưa thì sáng nay đi bù thay Green Pine. Tuyệt Tịnh Cốc cách Rêu 20 phút, bến Tam Cốc 10 phút.</li>
+        <li><b>Muốn đi gần hơn Green Pine:</b> <a href="https://www.google.com/maps/dir/?api=1&destination=V%C6%B0%E1%BB%9Dn+chim+Thung+Nham" target="_blank" rel="noopener">Vườn chim Thung Nham</a>, khu sinh thái đường bằng, có xe điện, cách Rêu khoảng 20 phút. Vé 250.000đ/người lớn, xe điện thêm 40.000đ/người, trẻ dưới 1m miễn phí.</li>
+        <li><b>Mưa hoặc bé mệt:</b> bỏ Green Pine, ngồi cà phê ở Rêu đến lúc trả phòng, ăn trưa ở Năm Dê rồi về sớm.</li>
+        <li><b>Năm Dê kín bàn:</b> <a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+H%C3%A0ng+D%C3%AA+Ch%C3%ADnh+Th%C6%B0+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Nhà hàng Dê Chính Thư</a> (4,2★, hơn 5.000 đánh giá, mở trưa đến 15:00), gần Tam Cốc.</li>
+      </ul>
+    </div>
+    </div>
   </section>
 
   <!-- ================= ĂN UỐNG ================= -->
@@ -911,21 +951,14 @@
         </thead>
         <tbody>
           <tr>
-            <td><span class="when num">07:00</span><span class="day-tag">Ngày 1</span></td>
-            <td>Trên đường hoặc trạm dừng nghỉ<small>Ăn sáng · phở, bánh mì</small></td>
-            <td class="hide-sm">—</td>
-            <td class="r hide-sm">—</td>
-            <td class="r num">40–60k</td>
-          </tr>
-          <tr>
-            <td><span class="when num">09:00</span><span class="day-tag">Ngày 1</span></td>
+            <td><span class="when num">11:00</span><span class="day-tag">Ngày 1</span></td>
             <td><a href="https://www.google.com/maps/dir/?api=1&destination=Starbucks+Tr%C3%A0ng+An+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Starbucks Tràng An</a><small>Cà phê · khu bến thuyền Tràng An</small></td>
             <td class="hide-sm">—</td>
             <td class="r num hide-sm">7:00 – 18:00</td>
             <td class="r num">75–125k</td>
           </tr>
           <tr>
-            <td><span class="when num">11:00</span><span class="day-tag">Ngày 1</span></td>
+            <td><span class="when num">12:20</span><span class="day-tag">Ngày 1</span></td>
             <td><a href="https://www.google.com/maps/dir/?api=1&destination=C%C6%A1m+Ni%C3%AAu+Tam+C%E1%BB%91c+CLAYPOT+RICE+RESTAURANT" target="_blank" rel="noopener">Cơm Niêu Tam Cốc – Claypot Rice</a><small>Trưa · cơm niêu, món quê · trên đường về Rêu</small></td>
             <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,9 (1.438)</span></td>
             <td class="r num hide-sm">từ 10:00</td>
@@ -939,43 +972,43 @@
             <td class="r num">200–250k</td>
           </tr>
           <tr>
-            <td><span class="when num">06:30</span><span class="day-tag">Ngày 2</span></td>
+            <td><span class="when num">08:30</span><span class="day-tag">Ngày 2</span></td>
             <td><a href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Rêu Coffee &amp; Stay</a><small>Ăn sáng nhẹ · hỏi chủ nhà trước</small></td>
             <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 5,0 (341)</span></td>
             <td class="r hide-sm">—</td>
             <td class="r num">40–60k</td>
           </tr>
           <tr>
-            <td><span class="when num">09:45</span><span class="day-tag">Ngày 2</span></td>
+            <td><span class="when num">09:30</span><span class="day-tag">Ngày 2</span></td>
             <td><a href="https://www.google.com/maps/dir/?api=1&destination=At+Where+cafe+Tam+C%E1%BB%91c" target="_blank" rel="noopener">At Where</a><small>Cà phê · cách bến đò Tam Cốc ~400 m</small></td>
             <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,9 (1.050)</span></td>
             <td class="r num hide-sm">từ 9:00</td>
             <td class="r num">40–70k</td>
           </tr>
           <tr>
-            <td><span class="when num">11:00</span><span class="day-tag">Ngày 2</span></td>
+            <td><span class="when num">11:15</span><span class="day-tag">Ngày 2</span></td>
             <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+H%C3%A0ng+%C4%90%E1%BB%A9c+D%E1%BA%ABn+Tam+C%E1%BB%91c" target="_blank" rel="noopener">Nhà hàng Đức Dẫn</a><small>Trưa · món Việt · cách bến Tam Cốc ~1,2 km</small></td>
             <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,8 (591)</span></td>
             <td class="r num hide-sm">đến 23:00</td>
             <td class="r num">150–200k</td>
           </tr>
           <tr>
-            <td><span class="when num">18:00</span><span class="day-tag">Ngày 2</span></td>
+            <td><span class="when num">18:15</span><span class="day-tag">Ngày 2</span></td>
             <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+h%C3%A0ng+M%E1%BB%99c+Lan+n%C3%BAi+K%E1%BB%B3+L%C3%A2n+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Nhà hàng Mộc Lan</a><small>Tối · ngay trong phố cổ Hoa Lư · nên đặt bàn</small></td>
             <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (1.151)</span></td>
             <td class="r num hide-sm">đến 22:00</td>
             <td class="r num">150–250k</td>
           </tr>
           <tr>
-            <td><span class="when num">06:45</span><span class="day-tag">Ngày 3</span></td>
+            <td><span class="when num">08:30</span><span class="day-tag">Ngày 3</span></td>
             <td>Chỗ ở đêm thứ Bảy<small>Ăn sáng</small></td>
             <td class="hide-sm">—</td>
             <td class="r hide-sm">—</td>
             <td class="r num">40–60k</td>
           </tr>
           <tr>
-            <td><span class="when num">12:00</span><span class="day-tag">Ngày 3</span></td>
-            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener">Nhà hàng Năm Dê (CS15)</a><small>Trưa · dê núi, cơm cháy · cách Rêu ~1,5 km, trên đường ra cao tốc</small></td>
+            <td><span class="when num">12:45</span><span class="day-tag">Ngày 3</span></td>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Nh%C3%A0+h%C3%A0ng+N%C4%83m+D%C3%AA+CS15" target="_blank" rel="noopener">Nhà hàng Năm Dê (CS15)</a><small>Trưa · dê núi, cơm cháy · trên đường ra cao tốc</small></td>
             <td class="hide-sm"><span class="stars num"><svg class="icon"><use href="#i-star"/></svg> 4,7 (1.429)</span></td>
             <td class="r num hide-sm">đến 21:00</td>
             <td class="r num">200–250k</td>
@@ -984,19 +1017,19 @@
             <td colspan="2">Ăn uống cả chuyến, 1 người</td>
             <td class="hide-sm"></td>
             <td class="hide-sm"></td>
-            <td class="r num">~1,3 tr</td>
+            <td class="r num">~1,25 tr</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <p class="fineprint">Tiền ăn mỗi người khoảng 1,1–1,5 triệu tùy món gọi. Giá món tham khảo: dê tái chanh khoảng 180.000–250.000đ/đĩa, cơm cháy sốt dê 110.000–150.000đ/đĩa, đồ uống ở quán cà phê Tam Cốc 40.000–70.000đ/ly, Starbucks 75.000–125.000đ/ly. Nên đặt bàn trước và hỏi giá trước khi gọi món dê.</p>
+    <p class="fineprint">Tiền ăn mỗi người khoảng 1,05–1,45 triệu tùy món gọi. Ngày 1 ăn sáng ở nhà trước khi đi. Giá món tham khảo: dê tái chanh khoảng 180.000–250.000đ/đĩa, cơm cháy sốt dê 110.000–150.000đ/đĩa, đồ uống ở quán cà phê Tam Cốc 40.000–70.000đ/ly, Starbucks 75.000–125.000đ/ly. Nên đặt bàn trước và hỏi giá trước khi gọi món dê.</p>
   </section>
 
   <!-- ================= CHI PHÍ ================= -->
   <section id="chi-phi">
     <div class="sec-head">
       <div class="eyebrow">Chi phí</div>
-      <h2>Mỗi người khoảng 2,1 triệu</h2>
+      <h2>Mỗi người khoảng 2,05 triệu</h2>
       <p>Tính cho 4 người lớn 25–30 tuổi, giá vé người lớn đầy đủ. Gồm vé tham quan, ăn uống, xăng và phí cao tốc, chưa gồm tiền phòng. Bé dưới 2 tuổi được miễn vé ở cả 3 điểm.</p>
     </div>
 
@@ -1008,8 +1041,8 @@
       </div>
       <div class="card tile">
         <div class="label">Ăn uống</div>
-        <div class="val num">~1.300.000đ</div>
-        <div class="hint">1,1–1,5 triệu tùy món gọi</div>
+        <div class="val num">~1.250.000đ</div>
+        <div class="hint">1,05–1,45 triệu tùy món gọi</div>
       </div>
       <div class="card tile">
         <div class="label">Xe, chia 4 người</div>
@@ -1018,8 +1051,8 @@
       </div>
       <div class="card tile total">
         <div class="label">Tổng mỗi người</div>
-        <div class="val num">~2.100.000đ</div>
-        <div class="hint">Cả nhà 4 người khoảng 8,4 triệu</div>
+        <div class="val num">~2.050.000đ</div>
+        <div class="hint">Cả nhà 4 người khoảng 8,2 triệu</div>
       </div>
     </div>
 
@@ -1103,7 +1136,7 @@
     <div class="notes">
       <div class="card note">
         <div class="ov-icon"><svg class="icon"><use href="#i-clock"/></svg></div>
-        <div><h3>Đi sớm vào cuối tuần</h3><p>Thứ Bảy và Chủ Nhật, các điểm đông từ khoảng 9 giờ. Vì vậy đò Tam Cốc và Green Pine đều xếp vào sáng sớm.</p></div>
+        <div><h3>Ngủ dậy 8:00, tránh giờ đông</h3><p>Sáng thứ Bảy bến Tam Cốc đông nhất, nên đò được xếp vào buổi chiều. Nếu kế hoạch nào không đi được, xem phần phương án thay thế ở cuối mỗi ngày.</p></div>
       </div>
       <div class="card note">
         <div class="ov-icon"><svg class="icon"><use href="#i-phone"/></svg></div>
