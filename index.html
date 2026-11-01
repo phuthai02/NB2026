@@ -160,6 +160,7 @@
   .wx-day { font-size: 13px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
   .wx-date { font-size: 19px; font-weight: 700; margin-top: 2px; white-space: nowrap; }
   .wx-ico { width: 44px; height: 44px; flex: none; color: var(--warm); }
+  .wx-ico.rainy { color: var(--sky); }
   .wx-temp { font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
   .wx-temp small { font-size: 16px; font-weight: 500; color: var(--muted); }
   .rain {
@@ -412,6 +413,7 @@
     <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8l2.8 5.9 6.4.8-4.7 4.4 1.2 6.4L12 17.2l-5.7 3.1 1.2-6.4L2.8 9.5l6.4-.8z"/></symbol>
     <symbol id="i-fire" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c1 3.5 5 5.5 5 11a5 5 0 0 1-10 0c0-2.4 1.2-4 2.4-5 .1 1.6.8 2.6 1.8 3 .2-3.4-.7-6.4.8-9z"/></symbol>
     <symbol id="i-sun-cloud" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="17" r="7"/><path d="M18 4v3M18 27v3M5 17h3M7.8 6.8l2.1 2.1M26.2 6.8l-2.1 2.1M7.8 27.2l2.1-2.1"/><path d="M20 40h17a7 7 0 0 0 0-14 9 9 0 0 0-16.5 3A5.5 5.5 0 0 0 20 40z" fill="#ffffff"/></symbol>
+    <symbol id="i-cloud-rain" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M14 30h20a8 8 0 0 0 0-16 11 11 0 0 0-20.5 3.5A6.5 6.5 0 0 0 14 30z"/><path d="M17 36l-2 5M25 36l-2 5M33 36l-2 5"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
     <symbol id="i-umbrella" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v7a2 2 0 0 0 4 0"/></symbol>
     <symbol id="i-baby" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M10 7.5h.01M14 7.5h.01M10.5 10a2 2 0 0 0 3 0"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></symbol>
@@ -536,68 +538,70 @@
   <section id="thoi-tiet">
     <div class="sec-head">
       <div class="eyebrow">Thời tiết từng ngày</div>
-      <h2>Mát, nắng nhẹ, hầu như không mưa</h2>
-      <p>Trưa ấm khoảng 26°C, sáng sớm và tối se lạnh khoảng 19–21°C.</p>
+      <h2>Ấm, có thể có mưa rào</h2>
+      <p>Dự báo mới nhất (01/11): ban ngày 26–28°C, sáng và tối khoảng 21–24°C. Cả 3 ngày đều có khả năng mưa rào khoảng 50–70%, nên mang ô và áo mưa.</p>
     </div>
 
     <div class="wx-grid">
       <article class="card wx">
         <div class="wx-top">
           <div><div class="wx-day">Thứ Sáu</div><div class="wx-date">13/11 · Ngày 1</div></div>
-          <svg class="wx-ico" aria-label="Nắng xen mây"><use href="#i-sun-cloud"/></svg>
+          <svg class="wx-ico rainy" aria-label="Mây, có mưa rào"><use href="#i-cloud-rain"/></svg>
         </div>
-        <div class="wx-temp num">19° – 26°<small>C</small></div>
-        <div><span class="rain wet"><svg class="icon"><use href="#i-umbrella"/></svg>Có thể mưa nhỏ</span></div>
+        <div class="wx-temp num">21° – 26°<small>C</small></div>
+        <div><span class="rain wet"><svg class="icon"><use href="#i-umbrella"/></svg>Có thể mưa rào</span></div>
         <dl>
-          <dt>Lúc xuất phát (9h)</dt><dd class="num">21–22°C</dd>
-          <dt>Buổi trưa</dt><dd class="num">25–26°C</dd>
-          <dt>Chiều ở Starbucks (16–17h)</dt><dd class="num">23–25°C</dd>
+          <dt>Khả năng mưa</dt><dd class="num">~60%</dd>
+          <dt>Lúc xuất phát (9h)</dt><dd class="num">23–24°C</dd>
+          <dt>Chiều ở Starbucks (16–17h)</dt><dd class="num">24–25°C</dd>
+          <dt>Tối ở phố Tam Cốc</dt><dd class="num">23–24°C</dd>
           <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
         </dl>
-        <p class="wear"><strong>Mặc gì:</strong> áo thun, mang thêm áo khoác mỏng. Bé mặc áo dài tay mỏng. Để sẵn ô trên xe.</p>
+        <p class="wear"><strong>Mặc gì:</strong> áo thun, quần mỏng, để sẵn ô và áo mưa trên xe. Bé mặc đồ mỏng thoáng, mang áo khoác mỏng cho buổi tối.</p>
       </article>
 
       <article class="card wx">
         <div class="wx-top">
           <div><div class="wx-day">Thứ Bảy</div><div class="wx-date">14/11 · Ngày 2</div></div>
-          <svg class="wx-ico" aria-label="Nắng xen mây"><use href="#i-sun-cloud"/></svg>
+          <svg class="wx-ico rainy" aria-label="Mây, có mưa rào"><use href="#i-cloud-rain"/></svg>
         </div>
-        <div class="wx-temp num">19° – 26°<small>C</small></div>
-        <div><span class="rain dry"><svg class="icon"><use href="#i-sun"/></svg>Không mưa</span></div>
+        <div class="wx-temp num">21° – 28°<small>C</small></div>
+        <div><span class="rain wet"><svg class="icon"><use href="#i-umbrella"/></svg>Có thể mưa rào, dông chiều</span></div>
         <dl>
-          <dt>Sáng ở Tuyệt Tịnh Cốc (9–11h)</dt><dd class="num">21–24°C</dd>
-          <dt>Buổi trưa</dt><dd class="num">25–26°C</dd>
-          <dt>Tối ở phố cổ</dt><dd class="num">20–22°C</dd>
+          <dt>Khả năng mưa</dt><dd class="num">~60%</dd>
+          <dt>Sáng ở Tuyệt Tịnh Cốc (9–11h)</dt><dd class="num">24–26°C</dd>
+          <dt>Buổi trưa</dt><dd class="num">27–29°C</dd>
+          <dt>Tối ở phố cổ</dt><dd class="num">24–25°C</dd>
           <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
         </dl>
-        <p class="wear"><strong>Mặc gì:</strong> sáng ven hồ có gió nhẹ, mang áo khoác mỏng và mũ cho bé. Tối ở phố cổ mặc thêm áo ấm.</p>
+        <p class="wear"><strong>Mặc gì:</strong> đi Tuyệt Tịnh Cốc buổi sáng là hợp, vì nếu có dông thì thường vào chiều, lúc cả nhà đang nghỉ ở Lamia. Mang ô, áo trùm xe đẩy.</p>
       </article>
 
       <article class="card wx">
         <div class="wx-top">
           <div><div class="wx-day">Chủ Nhật</div><div class="wx-date">15/11 · Ngày 3</div></div>
-          <svg class="wx-ico" aria-label="Nắng xen mây"><use href="#i-sun-cloud"/></svg>
+          <svg class="wx-ico rainy" aria-label="Mây, có mưa rào"><use href="#i-cloud-rain"/></svg>
         </div>
-        <div class="wx-temp num">20° – 27°<small>C</small></div>
-        <div><span class="rain dry"><svg class="icon"><use href="#i-sun"/></svg>Không mưa</span></div>
+        <div class="wx-temp num">22° – 28°<small>C</small></div>
+        <div><span class="rain wet"><svg class="icon"><use href="#i-umbrella"/></svg>Có thể mưa nhỏ</span></div>
         <dl>
-          <dt>Lúc đi đò (10–12h)</dt><dd class="num">24–26°C</dd>
-          <dt>Buổi trưa</dt><dd class="num">26–27°C</dd>
-          <dt>Lúc về Hà Nội</dt><dd class="num">25–26°C</dd>
+          <dt>Khả năng mưa</dt><dd class="num">~50%</dd>
+          <dt>Lúc đi đò (10–12h)</dt><dd class="num">25–28°C</dd>
+          <dt>Lúc về Hà Nội (13–15h)</dt><dd class="num">27–28°C</dd>
           <dt>Mặt trời lặn</dt><dd class="num">17:16</dd>
         </dl>
-        <p class="wear"><strong>Mặc gì:</strong> đò không có mái che, mang mũ, ô và áo phao cho bé. Để một bộ đồ dự phòng cho bé trên xe về.</p>
+        <p class="wear"><strong>Mặc gì:</strong> đò không có mái che: mang mũ, ô, áo mưa và áo phao cho bé. Để một bộ đồ dự phòng cho bé trên xe về.</p>
       </article>
     </div>
 
     <div class="callout" role="note">
       <svg class="icon"><use href="#i-info"/></svg>
       <div>
-        <p><strong>Lưu ý:</strong> dự báo hôm 29/10 cho thấy có thể có đợt gió mùa kèm mưa khoảng 10–12/11, nhiệt độ chỉ 17–21°C. Nếu đợt lạnh kéo sang 13/11, cần mang thêm áo ấm, tất và mũ len cho bé.</p>
-        <p>Nên xem lại dự báo ngày 10–11/11 trên <a href="https://nchmf.gov.vn/" target="_blank" rel="noopener">nchmf.gov.vn</a>.</p>
+        <p><strong>Cập nhật 01/11:</strong> không còn thấy đợt gió mùa lạnh như dự báo hôm 29/10. Trời ấm hơn mọi năm khoảng 2°C, nhưng khả năng mưa rào cao hơn (mọi năm chỉ khoảng 3/10 ngày có mưa).</p>
+        <p>Dự báo còn 12–14 ngày nên có thể thay đổi. Nên xem lại ngày 10–11/11 trên <a href="https://nchmf.gov.vn/" target="_blank" rel="noopener">nchmf.gov.vn</a>. Nếu mưa, xem phần phương án thay thế ở cuối mỗi ngày.</p>
       </div>
     </div>
-    <p class="fineprint">Nhiệt độ và khả năng mưa tính theo thời tiết đúng các ngày 13–15/11 trong 16 năm qua ở khu Tam Cốc.</p>
+    <p class="fineprint">Dự báo cập nhật 01/11/2026 cho khu Tam Cốc – Hoa Lư. Trung bình 16 năm cùng ngày: 19–27°C.</p>
   </section>
 
   <!-- ================= NGÀY 1 ================= -->
@@ -607,7 +611,7 @@
       <h2>Thứ Sáu 13/11</h2>
       <p class="theme">Tới nơi ăn trưa, nhận phòng ngủ trưa, chiều Starbucks Tràng An và Ô Trấn, về tắm rồi tối dạo phố Tam Cốc.</p>
       <div class="pills">
-        <span class="pill wx-pill wet"><svg class="icon"><use href="#i-umbrella"/></svg>19–26°C · có thể mưa nhỏ</span>
+        <span class="pill wx-pill wet"><svg class="icon"><use href="#i-umbrella"/></svg>21–26°C · có thể mưa rào</span>
         <span class="pill"><svg class="icon"><use href="#i-car"/></svg>~2 giờ đường</span>
       </div>
       <ul class="keys">
@@ -751,7 +755,7 @@
       <h2>Thứ Bảy 14/11</h2>
       <p class="theme">Trả phòng Rêu, sáng dạo Tuyệt Tịnh Cốc, trưa nhận phòng Lamia ngủ trưa, chiều chơi ở villa, tối phố cổ Hoa Lư.</p>
       <div class="pills">
-        <span class="pill wx-pill"><svg class="icon"><use href="#i-sun"/></svg>19–26°C · không mưa</span>
+        <span class="pill wx-pill wet"><svg class="icon"><use href="#i-umbrella"/></svg>21–28°C · có thể mưa, dông</span>
         <span class="pill"><svg class="icon"><use href="#i-bed"/></svg>Sang Lamia · nhận phòng 14:00</span>
       </div>
       <ul class="keys">
@@ -912,7 +916,7 @@
       <h2>Chủ Nhật 15/11</h2>
       <p class="theme">Trả phòng Lamia, sáng đi đò Tam Cốc, ăn trưa trên đường ra cao tốc rồi về Hà Nội, bé ngủ trên xe.</p>
       <div class="pills">
-        <span class="pill wx-pill"><svg class="icon"><use href="#i-sun"/></svg>20–27°C · không mưa</span>
+        <span class="pill wx-pill wet"><svg class="icon"><use href="#i-umbrella"/></svg>22–28°C · có thể mưa nhỏ</span>
         <span class="pill"><svg class="icon"><use href="#i-boat"/></svg>Đò ~2 giờ</span>
       </div>
       <ul class="keys">
@@ -1469,8 +1473,8 @@
       <ul class="checks" id="checks">
         <li><label><input type="checkbox" data-k="diu"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Địu em bé</b><span>Bế bé khi lên xuống đò Tam Cốc</span></span></label></li>
         <li><label><input type="checkbox" data-k="phao"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Áo phao trẻ em</b><span>Bến đò ít khi có áo phao cỡ cho bé</span></span></label></li>
-        <li><label><input type="checkbox" data-k="mu"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Mũ rộng vành, ô che</b><span>Đò Tam Cốc không có mái che</span></span></label></li>
-        <li><label><input type="checkbox" data-k="ao"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Áo khoác, tất, mũ len</b><span>Sáng sớm khoảng 19°C, lạnh hơn nếu có gió mùa</span></span></label></li>
+        <li><label><input type="checkbox" data-k="mu"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Ô, áo mưa, áo trùm xe đẩy</b><span>Dự báo có mưa rào, đò Tam Cốc không có mái che</span></span></label></li>
+        <li><label><input type="checkbox" data-k="ao"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Áo khoác mỏng, tất</b><span>Sáng và tối khoảng 21–24°C</span></span></label></li>
         <li><label><input type="checkbox" data-k="muoi"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Kem chống muỗi cho bé</b><span>Ven hồ, ven sông có muỗi lúc chiều tối</span></span></label></li>
         <li><label><input type="checkbox" data-k="bim"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Bỉm, khăn ướt, khăn sữa</b><span>Đủ 3 ngày, thêm phần dự phòng</span></span></label></li>
         <li><label><input type="checkbox" data-k="sua"><span class="box"><svg class="icon"><use href="#i-check"/></svg></span><span class="txt"><b>Sữa, bình giữ nhiệt nước ấm</b><span>Pha sữa trên xe và trên đò</span></span></label></li>
