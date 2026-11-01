@@ -333,7 +333,9 @@
   .cost-table tr.sub td { font-weight: 700; background: var(--surface-2); }
   .cost-table td.r { width: 1%; }
   .cost-tiles { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 28px; }
-  @media (min-width: 900px) { .cost-tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (min-width: 900px) { .cost-tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+  @media (max-width: 899px) { .tile.total { grid-column: span 2; } }
+  .stay-price { margin-top: 2px; font-size: 15px; font-weight: 700; color: #b9541f; }
   .tile { padding: 16px 18px; }
   .tile .label { font-size: 13px; font-weight: 600; color: var(--muted); }
   .tile .val { margin-top: 4px; font-size: clamp(19px, 4.6vw, 24px); font-weight: 800; letter-spacing: -.01em; }
@@ -497,6 +499,7 @@
         <div>
           <h3>Thứ Sáu 13/11 · Rêu Coffee &amp; Stay</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>5,0 <span>· 341 đánh giá Google</span></div>
+          <p class="stay-price">1.460.000đ/đêm · giá đã đặt</p>
           <p>Homestay kèm quán cà phê, cà phê muối được khen nhiều. Nhận phòng 14:00. Điện thoại: <a href="tel:+84969221138">0969 221 138</a>.</p>
           <ul class="dist">
             <li>Bến đò Tam Cốc ~10 phút</li>
@@ -513,6 +516,7 @@
         <div>
           <h3>Thứ Bảy 14/11 · Lamia Tropical Garden</h3>
           <div class="rating"><svg class="icon"><use href="#i-star"/></svg>5,0 <span>· 13 đánh giá Google</span></div>
+          <p class="stay-price">5.100.000đ/đêm · giá đã đặt</p>
           <p>Biệt thự trong vườn nhiệt đới ở Tây Hoa Lư: 2 phòng ngủ, phòng khách, bếp riêng, xe đạp miễn phí, nhìn ra núi. Nhận phòng 14:00. Điện thoại: <a href="tel:+84925586262">0925 586 262</a>.</p>
           <ul class="dist">
             <li>Tuyệt Tịnh Cốc ~5 phút</li>
@@ -1316,8 +1320,8 @@
   <section id="chi-phi">
     <div class="sec-head">
       <div class="eyebrow">Chi phí</div>
-      <h2>Mỗi người khoảng 1,7 triệu</h2>
-      <p>Một bảng cho cả chuyến: cột giữa là 1 người lớn, cột cuối là cả nhà 4 người lớn. Bé dưới 2 tuổi được miễn vé ở cả 2 điểm. Chưa gồm tiền phòng.</p>
+      <h2>Mỗi người khoảng 3,3 triệu</h2>
+      <p>Một bảng cho cả chuyến: cột giữa là 1 người lớn, cột cuối là cả nhà 4 người lớn. Đã gồm vé, ăn uống, đi lại và 2 đêm chỗ ở. Bé dưới 2 tuổi được miễn vé ở cả 2 điểm.</p>
     </div>
 
     <div class="cost-tiles">
@@ -1336,10 +1340,15 @@
         <div class="val num">~175.000đ</div>
         <div class="hint">Cả nhà ~700.000đ</div>
       </div>
+      <div class="card tile">
+        <div class="label">Chỗ ở, 2 đêm</div>
+        <div class="val num">1.640.000đ</div>
+        <div class="hint">Cả nhà 6,56 triệu</div>
+      </div>
       <div class="card tile total">
         <div class="label">Tổng mỗi người</div>
-        <div class="val num">~1.700.000đ</div>
-        <div class="hint">Cả nhà khoảng 6,7 triệu</div>
+        <div class="val num">~3.300.000đ</div>
+        <div class="hint">Cả nhà khoảng 13,3 triệu</div>
       </div>
     </div>
 
@@ -1420,7 +1429,19 @@
             <td class="r num">~400k</td>
           </tr>
           <tr class="sub"><td>Cộng đi lại</td><td class="r num">~175k</td><td class="r num">~700k</td></tr>
-          <tr class="total"><td>Tổng cả chuyến<small>Chưa gồm tiền phòng</small></td><td class="r num">~1,7tr</td><td class="r num">~6,7tr</td></tr>
+          <tr class="grp"><td colspan="3">Chỗ ở</td></tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=R%C3%AAu+Coffee+%26+Stay+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Rêu Coffee &amp; Stay</a><small>Đêm thứ Sáu 13/11 · giá đã đặt</small></td>
+            <td class="r num">365k</td>
+            <td class="r num">1,46tr</td>
+          </tr>
+          <tr>
+            <td><a href="https://www.google.com/maps/dir/?api=1&destination=Lamia+Tropical+Garden+T%C3%A2y+Hoa+L%C6%B0+Ninh+B%C3%ACnh" target="_blank" rel="noopener">Lamia Tropical Garden</a><small>Đêm thứ Bảy 14/11 · giá đã đặt</small></td>
+            <td class="r num">1,275tr</td>
+            <td class="r num">5,1tr</td>
+          </tr>
+          <tr class="sub"><td>Cộng chỗ ở</td><td class="r num">1,64tr</td><td class="r num">6,56tr</td></tr>
+          <tr class="total"><td>Tổng cả chuyến<small>Đã gồm 2 đêm chỗ ở</small></td><td class="r num">~3,3tr</td><td class="r num">~13,3tr</td></tr>
         </tbody>
       </table>
     </div>
@@ -1430,7 +1451,7 @@
       <div class="card extra"><b>Vé cho bé</b>Bé dưới 1m miễn vé ở Tam Cốc, dưới 90 cm miễn vé ở Tuyệt Tịnh Cốc. Quầy vé có thể đo chiều cao.</div>
       <div class="card extra"><b>Chưa tính trong tổng</b>Gửi ô tô ở các điểm, tiền bồi dưỡng lái đò, thuyền thả đèn hoa đăng ở phố cổ (100.000đ/người lớn).</div>
     </div>
-    <p class="fineprint">k = nghìn đồng, tr = triệu đồng. Giá vé theo bảng giá các khu, điểm du lịch tỉnh Ninh Bình năm 2026. Giá ăn theo mức khách báo cáo trên Google: quán ghi 100–200k nghĩa là mỗi người thường tiêu trong khoảng đó, cả nhà nhân 4. Tổng ăn uống lấy giữa khoảng (0,85–1,45 triệu/người). Ngày 1 ăn sáng ở nhà. * Ô Trấn không có trong bảng giá vé của tỉnh.</p>
+    <p class="fineprint">k = nghìn đồng, tr = triệu đồng. Giá vé theo bảng giá các khu, điểm du lịch tỉnh Ninh Bình năm 2026. Giá ăn theo mức khách báo cáo trên Google: quán ghi 100–200k nghĩa là mỗi người thường tiêu trong khoảng đó, cả nhà nhân 4. Tổng ăn uống lấy giữa khoảng (0,85–1,45 triệu/người). Ngày 1 ăn sáng ở nhà. Tiền phòng theo giá đã đặt, chia đều cho 4 người lớn. * Ô Trấn không có trong bảng giá vé của tỉnh.</p>
   </section>
 
   <!-- ================= ĐỒ CHO BÉ ================= -->
